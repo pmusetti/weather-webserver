@@ -6,7 +6,6 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 
-
 const publicFolderPath = path.join(__dirname, '../public')
 const viewPaths = path.join(__dirname, '../templates/views')
 const partialPath =  path.join(__dirname, '../templates/partials')
