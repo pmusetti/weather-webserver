@@ -1,0 +1,53 @@
+const weatherForm = document.querySelector('form')//Apunta al formulario
+const search = document.querySelector('input')    //Apunta al input text
+const msg_1 = document.querySelector('#msg-01')//querySelector('#msg-one')
+const msg_2 = document.querySelector('#msg-02')
+const msg_3 = document.querySelector('#msg-03')
+const msg_4 = document.querySelector('#msg-04')
+const msg_5 = document.querySelector('#msg-05')
+const msg_6 = document.querySelector('#msg-06')
+const msg_7 = document.querySelector('#msg-07')
+const msg_8 = document.querySelector('#msg-08')
+const msg_9 = document.querySelector('#msg-09')
+const msg_10 = document.querySelector('#msg-10')
+const msg_11= document.querySelector('#msg-11')
+const msg_12= document.querySelector('#msg-12')
+const img = document.querySelector('#icon')
+
+
+
+function getForecast(location){
+  fetch('http://192.168.1.47:3000/weather?address=' + location).then((response)=>{
+    response.json().then((res)=>{
+      if(res.error){
+        msg_one.textContent = 'ERROR!'
+        msg_two.textContent = res.error
+        msg_three.textContent = 'oops!'
+      }else{
+        msg_1.textContent= res.data.resume.toUpperCase()
+        msg_2.textContent = 'Temperature: ' + res.data.temp 
+        msg_3.textContent = 'Location: '+ res.data.location
+        msg_4.textContent = 'Feels like: ' + res.data.feels_like 
+        msg_5.textContent = 'Temp min: ' + res.data.temp_min 
+        msg_6.textContent = 'Temp max: ' + res.data.temp_max 
+        msg_7.textContent = 'Pressure: ' + res.data.pressure 
+        msg_8.textContent = 'Humidity: ' + res.data.humidity
+        msg_9.textContent = 'Wind speed: ' + res.data.wind_speed
+        msg_10.textContent =  'Clouds: ' + res.data.clouds
+        msg_11.textContent =  'Sunrise: ' + res.data.sunrise
+        msg_12.textContent =  'Sunset: ' + res.data.sunset
+        img.src = 'http://openweathermap.org/img/wn/'+res.data.icon+'@2x.png'
+       
+      }
+    })
+  })
+
+}
+
+
+
+weatherForm.addEventListener('submit', (e)=>{
+  e.preventDefault()//Evita el comportamiento por defecto que es recargar la pagina.
+  const location = search.value
+  getForecast(location)
+  })
