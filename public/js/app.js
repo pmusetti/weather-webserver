@@ -15,9 +15,9 @@ const msg_12= document.querySelector('#msg-12')
 const img = document.querySelector('#icon')
 
 
-
+//Se utilizara en heroku por tanto se elimina la primer parte de la url http://192.168.1.47:3000
 function getForecast(location){
-  fetch('http://192.168.1.47:3000/weather?address=' + location).then((response)=>{
+  fetch('/weather?address=' + location).then((response)=>{
     response.json().then((res)=>{
       if(res.error){
         msg_one.textContent = 'ERROR!'

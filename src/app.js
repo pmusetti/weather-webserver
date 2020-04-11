@@ -4,7 +4,7 @@ const path = require('path')
 const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
-
+const port = process.env.PORT || 3000 //Linea agregada para tomar el puerto de heroku o el 3000
 
 const publicFolderPath = path.join(__dirname, '../public')
 const viewPaths = path.join(__dirname, '../templates/views')
@@ -90,7 +90,7 @@ app.get('*', (req, res)=>{
 
 
 // Listener del puerto
-app.listen(3000,()=>{
-  console.log('Server running in port 3000')
+app.listen(port,()=>{
+  console.log('Server running in port '+port)
 
 })
