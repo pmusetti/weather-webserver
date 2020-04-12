@@ -1,10 +1,12 @@
-El archivo que inicia el servidor se encuentra en ./src/app.js
+# Weather WebApp
+
+### El archivo que inicia el servidor se encuentra en ./src/app.js
 
 Se utilizan los módulos de express, path, hbs y 2 propios que se encuentran en utils.
 
-Configuración de express y handlebars.
+### Configuración de express y handlebars.
 
-express es un módulo que simplifica la tarea de servir datos.
+Express es un módulo que simplifica la tarea de servir datos.
 handlebars es un módulo que permite modificar contenido html de forma dinámica.
 
 publicFolderPath es el directorio donde se encuentran las imágenes, estilos y js del frontend.
@@ -12,7 +14,7 @@ publicFolderPath es el directorio donde se encuentran las imágenes, estilos y j
 viewPaths es el directorio donde se encuentran los archivos de handlebars(.hbs) que se utilizan en lugar de los html tradicionales. Handlebar se utiliza para mostrar páginas con contenido dinámico. Se estructura de forma similar al html tradicional dentro del cual se colocan objetos cuyo contenido será dinámico. Al momento de servir la página, se indica el archivo.hbs y un objeto con pares "clave:valor" que reemplazaran el contenido dinámico.
 
 Ejemplo:
-
+```
 //Respuesta inicial.
 app.get('',(req, res)=>{
   res.render('index',{
@@ -20,13 +22,18 @@ app.get('',(req, res)=>{
     name: 'Pablo Musetti'
   })
 })
-
-En este caso, cuando el cliente solicita la página inicia, se le devuelve el archivo index.hbs y la matriz {title:'Weather App', name_'Pablo Musetti'}
-
+```
+En este caso, cuando el cliente solicita la página inicia, se le devuelve el archivo index.hbs y la matriz 
+```
+  {
+    title:'Weather App',
+    name_'Pablo Musetti'
+    }
+```
 El archivo index.hbs contiene entre otras cosas un header con una etiqueta <h1></h1> dentro de la cual se coloco un objeto de hbs {{title}} de la siguiente forma:
-
+```
 <h1>{{title}}</h1>
-
+```
 y un footer con una etiqueta <p></p> dentro de la cual hay un objeto de hbs {{name}} de la siguiente forma:
 
 <p>Pagina creada por {{name}}</p>
@@ -49,25 +56,26 @@ Este header y footer también son archivos.hbs que es incluyen dentro de index.h
 Estos archivos parciales se encuentran dentro de templates/partials.
 Cuando utilizamos express, hay que indicarle que estamos utilizando handlebars y hay que "registrar" también el uso de archivos parciales.
 Esto se hace con las siguientes lineas:
-
+```
 hbs.registerPartials(partialPath) //Registro de partials
 app.set('view engine','hbs')      //Setup de handlebars en express
 app.set('views', viewPaths) //Set el directorio de archivos .hbs
-
+```
 Si no se define el directorio de views, por defectos los buscara el directorio llamado views que debe estar en el mismo directorio que el archivo que los llama (app.js). En este caso, como se utilizaron archivos partials, se ordenaron en directorios diferentes dentro de un directorio llamado templates, por lo tanto se definió el directorio views como /templates/views.
-
+```
 app.use(express.static(publicFolderPath))
+```
 Esta linea de código, le indica a express donde buscar los archivos estáticos (css, js, imágenes etc)
 
 Hasta aquí la configuración de express y handlebars.
 
 La aplicación Weather App tendrá 4 páginas.
-
+```
 Inicial (index.hbs) donde se podrá obtener información del clima.
 About   (about.hbs) donde se encontrará información del autor.
 Help    (help.hbs)  donde se encontrará información de ayuda.
 Error   (error404.hbs) página que se mostrará si se recibe una petición inesperada.
-
+```
 Una vez que se le indica a express donde esta el contenido estático, se debe configurar una respuesta predeterminada para cada petición que se espera. Es decir, al momento de diseñar el sitio, se determina cual será la estructura, y cuales son las peticiónes que el cliente le puede hacer al servidor.
 Para cada una de estas peticiones, se debe configurar una respuesta. También se debe configurar una respuesta para todas aquellas peticiones no establecidas. Este es el caso de la pagina de error404. Si el cliente envía una petición que no esta implementada, se devuelve la página de error.
 
@@ -75,9 +83,9 @@ Para el caso de peticiones preestablecidas, se configura una respuesta y finalme
 Las peticiones del cliente son las que vienen en la url luego del numero de puerto.
 
 Ejemplo:
-
+```
 192.168.1.47:3000/help
-
+```
 En este caso se manda la petición /help. Para este caso se configuró una respuesta y se devolverá la pagina Help.hbs
 
 Cuando el cliente inicialmente accede a la pagina 192.168.1.47:3000/ la petición que llega esta "vacía", esto se considera como la petición inicial y se devuelve la pagina de inicio index.hbs
@@ -92,19 +100,19 @@ Como ya mencionamos todas las páginas tienen una barra de navegación la cual p
 Este formulario permite al usuario ingresar el nombre de una ciudad y obtener los datos del clima para esa ciudad.
 Esto funciona de la siguiente manera:
 Del lado del cliente, se ingresa un valor en el campo de entrada. Se crea un eventListener en el botón de búsqueda, esto es, cuando sea cliqueado por el usuario, se ejecuta una función que toma el valor que ingresó el usuario en el campo y lo envía al servidor dentro de una url determinada.
-
+```
 'http://192.168.1.47:3000/weather?address=' + 'dato ingresado por el usuario'
-
+```
 Supongamos que el usuario ingreso 'Montevideo' en el campo de entrada.
 Si observamos esta url veremos que después del número de puerto 3000 se agrega lo siguiente:
-
+```
 /weather?address=Montevideo
-
+```
 Todo lo que esta después del signo '?' es lo que se llama argumento, y es interpretado por el servidor como un objeto "clave:valor" de la siguiente manera {address: 'Montevideo'}
 
 La petición que se hace al servidor es /weather. Sabiendo esto, configuramos el servidor para que al recibir la petición /weather, analice los argumentos y si encuentra la clave address, toma su valor y lo utiliza para obtener los datos del clima, de lo contrario, responde con un error.
 Esto se hace en la siguiente función:
-
+```
 /Respuesta a /weather
 app.get('/weather', (req, res)=>{
       if(!req.query.address){
@@ -126,7 +134,7 @@ app.get('/weather', (req, res)=>{
       }
     })
   })
-
+```
 Con req.query.address, se analiza la respuesta y se obtiene el valor de address.
 Si el valor es nulo, se responde un mensaje 'You must provide a address!'
 En caso contrario, se utiliza como parámetro de entrada de la función geocode() (ver ./utils/geocode.js), la cual se encarga de traer los datos de latitud y longitud de la ciudad. Si esta función no encuentra las coordenadas de la ciudad devuelve un error, en caso contrario lo utiliza como argumento de la función forecast()(ver ./utils/forecast) la cual se encarga de traer los datos del clima correspondientes a esas coordenadas.
