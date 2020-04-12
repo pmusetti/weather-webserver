@@ -6,12 +6,12 @@ Se utilizan los módulos de express, path, hbs y 2 propios que se encuentran en 
 
 ### Configuración de express y handlebars.
 
-Express es un módulo que simplifica la tarea de servir datos.
-handlebars es un módulo que permite modificar contenido html de forma dinámica.
+**Express** es un módulo que simplifica la tarea de servir datos.
+**handlebars** es un módulo que permite modificar contenido html de forma dinámica.
 
-publicFolderPath es el directorio donde se encuentran las imágenes, estilos y js del frontend.
+```publicFolderPath``` es el directorio donde se encuentran las imágenes, estilos y js del frontend.
 
-viewPaths es el directorio donde se encuentran los archivos de handlebars(.hbs) que se utilizan en lugar de los html tradicionales. Handlebar se utiliza para mostrar páginas con contenido dinámico. Se estructura de forma similar al html tradicional dentro del cual se colocan objetos cuyo contenido será dinámico. Al momento de servir la página, se indica el archivo.hbs y un objeto con pares "clave:valor" que reemplazaran el contenido dinámico.
+```viewPaths ```es el directorio donde se encuentran los archivos de handlebars(.hbs) que se utilizan en lugar de los html tradicionales. Handlebar se utiliza para mostrar páginas con contenido dinámico. Se estructura de forma similar al html tradicional dentro del cual se colocan objetos cuyo contenido será dinámico. Al momento de servir la página, se indica el archivo.hbs y un objeto con pares "clave:valor" que reemplazaran el contenido dinámico.
 
 Ejemplo:
 ```
@@ -30,20 +30,22 @@ En este caso, cuando el cliente solicita la página inicia, se le devuelve el ar
     name_'Pablo Musetti'
     }
 ```
-El archivo index.hbs contiene entre otras cosas un header con una etiqueta <h1></h1> dentro de la cual se coloco un objeto de hbs {{title}} de la siguiente forma:
+El archivo index.hbs contiene entre otras cosas un header con una etiqueta ```<h1></h1>``` dentro de la cual se coloco un objeto de hbs ```{{title}}``` de la siguiente forma:
 ```
 <h1>{{title}}</h1>
-```
-y un footer con una etiqueta ```<p></p>``` dentro de la cual hay un objeto de hbs ```{{name}}``` de la siguiente forma:
+``` 
+
+También hay un footer con una etiqueta ```<p></p>``` dentro de la cual hay un objeto de hbs ```{{name}}``` de la siguiente forma:
 
 ```<p>Pagina creada por {{name}}</p>```
 
 Estos objetos ```{{title}}``` y ```{{name}}```, tomaran el valor establecido en el par "clave:valor" que se paso junto con el archivo index.hbs. Entonces el header mostrara el titulo "Weather App" y el footer el texto "Página creada por Pablo Musetti"
 
 Este encabezado y footer son comunes a todas las paginas, de modo que cuando se sirven las demás páginas se pasa un nuevo objeto "clave:valor" con las mismas claves pero diferentes valores, esto resulta en que cambian los textos que se mostraran en el frontend.
-NOTA: En este caso particular, el texto que cambia dinamicamente  es el titulo, pues todas las páginas tienen títulos diferentes. El footer si hizo con handlebars también pero no amerita pues nunca cambia. Se hizo a modo experimental.
 
-partialPaths
+**NOTA: En este caso particular, el texto que cambia dinamicamente  es el titulo, pues todas las páginas tienen títulos diferentes. El footer si hizo con handlebars también pero no amerita pues nunca cambia. Se hizo a modo experimental.**
+
+```partialPaths```
 Volviendo al archivo app.js, veremos la declaración de partialPaths dentro de ./templates/partials.
 Si observamos el directorio templates, tiene 2 subdirectorios:
 
@@ -52,6 +54,7 @@ views
 
 Dentro de views están los archivos antes mencionados que reemplazan a los tradicionales html.
 En este caso tenemos 4 archivos que son index, about, help, error404. Cada uno de estos archivos se sirve según la solicitud del cliente y todos tienen en común en su estructura interna un header y un footer de la forma antes mencionada, de tal manera que cada vez que se llame a uno de estas páginas, serán servidas con un objeto "clave:valor" que modificara el header y footer de forma dinámica.
+
 Este header y footer también son archivos.hbs que es incluyen dentro de index.hbs, about.hbs etc. Por tanto, tenemos un archivo header.hbs y otro footer.hbs que solo tienen estructura de encabezado y pie de pagina respectivamente y se incluyen dentro de las paginas que se sirven. A estos archivos header.hbs y footer.hbs se los conoce como "partials" pues no son una página en si mismos, sinó que se utilizan para formar la parte estática de una pagina, común en todas las páginas pero su contenido será modificado según la página.
 Estos archivos parciales se encuentran dentro de templates/partials.
 Cuando utilizamos express, hay que indicarle que estamos utilizando handlebars y hay que "registrar" también el uso de archivos parciales.
@@ -143,5 +146,5 @@ Luego de todo este proceso, el servidor responde al cliente con los datos del cl
 
 Del lado del cliente se recibe esta respuesta y se analiza. (ver ./public/js/app.js)
 
-Si se obtiene un error, se imprime en pantalla el mensaje de error dentro de los tags <p></p> correspondientes.
-Si se obtienen los datos del tiempo, se imprimen en los tags <p></p> correspondientes.
+Si se obtiene un error, se imprime en pantalla el mensaje de error dentro de los tags ```<p></p>``` correspondientes.
+Si se obtienen los datos del tiempo, se imprimen en los tags ```<p></p>``` correspondientes.
