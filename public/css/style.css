@@ -74,6 +74,6 @@ button{
 #data p{
   margin: 16px;
   min-width: 200px;
-  border: solid 1px #b6b6b6;
+  /* border: solid 1px #b6b6b6; */
   padding: 3px;
 }
