@@ -1,5 +1,5 @@
 function unixTime(time){
-  var date = new Date(time * 1000);
+  var date = new Date((time -10800) * 1000);
   // Hours part from the timestamp
   if(date.getHours()<10){
     var hours = '0' + date.getHours();
