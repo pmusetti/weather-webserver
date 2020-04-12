@@ -34,11 +34,11 @@ El archivo index.hbs contiene entre otras cosas un header con una etiqueta <h1><
 ```
 <h1>{{title}}</h1>
 ```
-y un footer con una etiqueta <p></p> dentro de la cual hay un objeto de hbs {{name}} de la siguiente forma:
+y un footer con una etiqueta ```<p></p>``` dentro de la cual hay un objeto de hbs ```{{name}}``` de la siguiente forma:
 
-<p>Pagina creada por {{name}}</p>
+```<p>Pagina creada por {{name}}</p>```
 
-Estos objetos {{title}} y {{name}}, tomaran el valor establecido en el par "clave:valor" que se paso junto con el archivo index.hbs. Entonces el header mostrara el titulo "Weather App" y el footer el texto "Página creada por Pablo Musetti"
+Estos objetos ```{{title}}``` y ```{{name}}```, tomaran el valor establecido en el par "clave:valor" que se paso junto con el archivo index.hbs. Entonces el header mostrara el titulo "Weather App" y el footer el texto "Página creada por Pablo Musetti"
 
 Este encabezado y footer son comunes a todas las paginas, de modo que cuando se sirven las demás páginas se pasa un nuevo objeto "clave:valor" con las mismas claves pero diferentes valores, esto resulta en que cambian los textos que se mostraran en el frontend.
 NOTA: En este caso particular, el texto que cambia dinamicamente  es el titulo, pues todas las páginas tienen títulos diferentes. El footer si hizo con handlebars también pero no amerita pues nunca cambia. Se hizo a modo experimental.
