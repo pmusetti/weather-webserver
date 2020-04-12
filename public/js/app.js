@@ -24,9 +24,9 @@ function getForecast(location){
         msg_two.textContent = res.error
         msg_three.textContent = 'oops!'
       }else{
-        msg_1.textContent= res.data.resume.toUpperCase()
-        msg_2.textContent = 'Temperature: ' + res.data.temp 
-        msg_3.textContent = 'Location: '+ res.data.location
+        msg_1.textContent = 'Location: '+ res.data.location
+        msg_2.textContent= res.data.resume.toUpperCase()
+        msg_3.textContent = 'Temperature: ' + res.data.temp 
         msg_4.textContent = 'Feels like: ' + res.data.feels_like 
         msg_5.textContent = 'Temp min: ' + res.data.temp_min 
         msg_6.textContent = 'Temp max: ' + res.data.temp_max 
