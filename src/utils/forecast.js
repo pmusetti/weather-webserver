@@ -28,7 +28,7 @@ const unixTime = require('./timeConvert')
 //Para traer los iconos http://openweathermap.org/img/wn/50d@2x.png
 const forecast = (latitud, longitud , callback)=>{
     
-  const url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitud}&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
+  const url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitud}&units=metric&appid=c2c053ae4c5303e99b26955bf8136eb7`
   request({url: url, json: true}, (error, response)=>{
     if(error){
       callback('Unable to connect forecast service!', undefined)
@@ -49,7 +49,7 @@ const forecast = (latitud, longitud , callback)=>{
         temp_max: response.body.main.temp_max + '°',
         pressure: response.body.main.pressure + 'hPa',
         humidity: response.body.main.humidity + '%',
-        wind_speed: (response.body.wind.speed * 3.6) + 'km/h',
+        wind_speed: (response.body.wind.speed * 3.6).toFixed(2) + 'm/s',
         clouds: response.body.clouds.all + '%',
         sunrise: amanecer ,
         sunset:  atardecer
