@@ -71,7 +71,7 @@ myLocation.addEventListener('click', (e) => {
     console.log('Latitude : ' + crd.latitude);
     console.log('Longitude: ' + crd.longitude);
     console.log('More or less ' + crd.accuracy + ' meters.');
-    alert('Your location will be calculated with a precision of' + crd.accuracy + '  meters' )
+    alert('Your location will be calculated with a precision of ' + crd.accuracy + '  meters' )
     const location = crd.latitude + ' ' + crd.longitude
     getForecast(location)
 
