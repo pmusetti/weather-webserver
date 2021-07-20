@@ -46,19 +46,26 @@ const request = require('request')
 //   })
 // }
 
-var requestOptions = {
-  method: 'GET',
-};
 const geocode = (address, callback)=>{
-  console.log("geocode address: "+address)
-fetch("https://api.geoapify.com/v1/geocode/search?text="+ encodeURIComponent(address) +"&apiKey=cf92bd8c57cc47a78a06128662042303", requestOptions)
-  .then(response => response.json())
-  .then((result) => {data = {
-    latitud: -34,
-    longitud: -54,
-    location: "La Paz"
-  }})
-  .catch(error => console.log('error', error));
+  const url = 'https://api.geoapify.com/v1/geocode/search?text=' + encodeURIComponent(address) +'&apiKey=cf92bd8c57cc47a78a06128662042303'
+  request({url: url, json: true}, (error, response)=>{
+    if(error){
+      callback('Unable to connect mapbox service!', undefined)
 
+    }else if(response.body.features.length === 0){
+      callback('Unable to find location', undefined)
+
+    }else{
+      const data ={
+        latitud: -34,
+        longitud: -54,
+        location: "algunlugar"
+      }
+      callback(undefined, data)
+
+    }
+  })
 }
+
+
 module.exports = geocode
