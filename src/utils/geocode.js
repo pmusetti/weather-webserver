@@ -57,8 +57,8 @@ const geocode = (address, callback)=>{
 
     }else{
       const data ={
-        latitud: -34,
-        longitud: -54,
+        latitud: response.body.features[0].properties.lat,
+        longitud: response.body.features[0].properties.lon,
         location: "algunlugar"
       }
       callback(undefined, data)
