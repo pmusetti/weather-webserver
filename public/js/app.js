@@ -1,3 +1,5 @@
+const forecast = require("../../src/utils/forecast")
+
 const weatherForm = document.querySelector('form')//Apunta al formulario
 const search = document.querySelector('input')    //Apunta al input text
 const msg_1 = document.querySelector('#msg-01')//querySelector('#msg-one')
@@ -78,4 +80,11 @@ myLocation.addEventListener('click', (e) => {
 
   navigator.geolocation.getCurrentPosition(success, error, options);
   alert("my location is ")
+
+  forecast(crd.latitude, crd.longitude, (error, data) => {
+    res.send({
+      error,
+      data
+    })
+  })
 })
