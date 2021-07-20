@@ -13,6 +13,7 @@ const msg_10 = document.querySelector('#msg-10')
 const msg_11= document.querySelector('#msg-11')
 const msg_12= document.querySelector('#msg-12')
 const img = document.querySelector('#icon')
+const myLocation = document.querySelector('#myLocation')
 
 
 //Se utilizara en heroku por tanto se elimina la primer parte de la url http://192.168.1.47:3000
@@ -52,3 +53,29 @@ weatherForm.addEventListener('submit', (e)=>{
   const location = search.value
   getForecast(location)
   })
+
+myLocation.addEventListener('onClick',(e) =>{
+  e.preventDefault()
+
+  var options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+  };
+  
+  function success(pos) {
+    var crd = pos.coords;
+  
+    console.log('Your current position is:');
+    console.log('Latitude : ' + crd.latitude);
+    console.log('Longitude: ' + crd.longitude);
+    console.log('More or less ' + crd.accuracy + ' meters.');
+  };
+  
+  function error(err) {
+    console.warn('ERROR(' + err.code + '): ' + err.message);
+  };
+  
+  navigator.geolocation.getCurrentPosition(success, error, options);
+  alert("my location is " ) 
+})
