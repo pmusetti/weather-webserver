@@ -71,6 +71,7 @@ myLocation.addEventListener('click', (e) => {
     console.log('Latitude : ' + crd.latitude);
     console.log('Longitude: ' + crd.longitude);
     console.log('More or less ' + crd.accuracy + ' meters.');
+    alert('Location : ' + crd.latitude + ' ' + crd.longitude + ' with acuracy ' + crd.accuracy + 'more or less meters' )
   };
 
   function error(err) {
@@ -78,6 +79,6 @@ myLocation.addEventListener('click', (e) => {
   };
 
   navigator.geolocation.getCurrentPosition(success, error, options);
-  alert('Location : ' + crd.latitude + ' ' + crd.longitude + ' with acuracy ' + crd.accuracy + 'more or less meters' )
+  
 
 })
