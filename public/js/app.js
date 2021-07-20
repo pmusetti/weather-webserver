@@ -72,7 +72,7 @@ myLocation.addEventListener('click', (e) => {
     console.log('Longitude: ' + crd.longitude);
     console.log('More or less ' + crd.accuracy + ' meters.');
     alert('Location : ' + crd.latitude + ' ' + crd.longitude + ' with accuracy ' + crd.accuracy + '  meters' )
-    const location = crd.latitude + crd.longitude
+    const location = crd.latitude + ' ' + crd.longitude
     getForecast(location)
 
   };
