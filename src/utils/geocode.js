@@ -52,7 +52,11 @@ var requestOptions = {
 
 const geocode = (address, callback)=>{
 fetch("https://api.geoapify.com/v1/geocode/search?text=" + encodeURIComponent(address) + "&apiKey=cf92bd8c57cc47a78a06128662042303", requestOptions)
-  .then(response => console.log("hola"))
+  .then(response =>  data ={
+             latitud: 54,
+             longitud: 33,
+             location: "La Paz"
+           })
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 }
