@@ -71,7 +71,7 @@ myLocation.addEventListener('click', (e) => {
     console.log('Latitude : ' + crd.latitude);
     console.log('Longitude: ' + crd.longitude);
     console.log('More or less ' + crd.accuracy + ' meters.');
-    alert('Location : ' + crd.latitude + ' ' + crd.longitude + ' with acuracy ' + crd.accuracy/1000 + 'more or less kilometers' )
+    alert('Location : ' + crd.latitude + ' ' + crd.longitude + ' with accuracy ' + crd.accuracy/1000 + '  kilometers' )
   };
 
   function error(err) {
