@@ -50,6 +50,7 @@ var requestOptions = {
   method: 'GET',
 };
 const geocode = (address, callback)=>{
+  console.log("geocode address: "+address)
 fetch("https://api.geoapify.com/v1/geocode/search?text="+ encodeURIComponent(address) +"&apiKey=cf92bd8c57cc47a78a06128662042303", requestOptions)
   .then(response => response.json())
   .then((result) => {data = {
