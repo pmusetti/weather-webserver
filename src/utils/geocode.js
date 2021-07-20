@@ -59,7 +59,7 @@ const geocode = (address, callback)=>{
       const data ={
         latitud: response.body.features[0].properties.lat,
         longitud: response.body.features[0].properties.lon,
-        location: "algunlugar"
+        location: response.body.features[0].properties.city + "," + response.body.features[0].properties.state
       }
       callback(undefined, data)
 
