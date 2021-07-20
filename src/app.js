@@ -18,7 +18,7 @@ app.use(express.static(publicFolderPath))
 //Respuesta inicial.
 app.get('',(req, res)=>{
   res.render('index',{
-    title: 'Weather App',
+    title: 'Weather Apps',
     name: 'Pablo Musetti Millan'
         
   })
