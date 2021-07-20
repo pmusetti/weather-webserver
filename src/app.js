@@ -51,6 +51,7 @@ app.get('/weather', (req, res)=>{
       })
     }
       var city = req.query.address
+      console.log("get city: "+ city)
       geocode(city, (error, data)=>{
         if (error){
           res.send({ error })      
