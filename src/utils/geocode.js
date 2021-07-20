@@ -25,28 +25,39 @@ const request = require('request')
 // En tal caso, extraigo los datos de interés y los pongo dentro de un objeto 'data' y lo devuelvo como parametro 'data' del callback y 'error' undefined
 //Los datos devueltos por esta función son tomados como argumento por la función forecast (ver app.js)
 
-const geocode = (address, callback)=>{
-  const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) +'.json?access_token=pk.eyJ1IjoicG11c2V0dGkiLCJhIjoiY2s4cDFrYWp2MDBhbTNlbDl6eGkyaTdkdCJ9.0mJGMFEpGbyCun-zkiFEGw'
-  request({url: url, json: true}, (error, response)=>{
-    if(error){
-      callback('Unable to connect mapbox service!', undefined)
+// const geocode = (address, callback)=>{
+//   const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) +'.json?access_token=pk.eyJ1IjoicG11c2V0dGkiLCJhIjoiY2s4cDFrYWp2MDBhbTNlbDl6eGkyaTdkdCJ9.0mJGMFEpGbyCun-zkiFEGw'
+//   request({url: url, json: true}, (error, response)=>{
+//     if(error){
+//       callback('Unable to connect mapbox service!', undefined)
 
-    }else if(response.body.features.length === 0){
-      callback('Unable to find location', undefined)
+//     }else if(response.body.features.length === 0){
+//       callback('Unable to find location', undefined)
 
-    }else{
-      const data ={
-        latitud: response.body.features[0].center[1],
-        longitud: response.body.features[0].center[0],
-        location: response.body.features[0].place_name
-      }
-      callback(undefined, data)
+//     }else{
+//       const data ={
+//         latitud: response.body.features[0].center[1],
+//         longitud: response.body.features[0].center[0],
+//         location: response.body.features[0].place_name
+//       }
+//       callback(undefined, data)
 
-    }
+//     }
+//   })
+// }
+
+var requestOptions = {
+  method: 'GET',
+};
+
+fetch("https://api.geoapify.com/v1/geocode/search?text=38%20Upper%20Montagu%20Street%2C%20Westminster%20W1H%201LJ%2C%20United%20Kingdom&apiKey=cf92bd8c57cc47a78a06128662042303", requestOptions)
+  .then(response => response.json())
+  .then(result => data = {
+    latitud: -34,
+    longitud: -54,
+    location: "La Paz"
   })
-}
-
-
+  .catch(error => console.log('error', error));
 
 
 module.exports = geocode
