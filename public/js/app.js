@@ -1,3 +1,4 @@
+const { get } = require("request")
 
 const weatherForm = document.querySelector('form')//Apunta al formulario
 const search = document.querySelector('input')    //Apunta al input text
@@ -59,6 +60,11 @@ weatherForm.addEventListener('submit', (e) => {
 myLocation.addEventListener('click', (e) => {
   e.preventDefault()
 
+  getForecast();
+
+})
+
+function getForecast() {
   var options = {
     enableHighAccuracy: true,
     timeout: 5000,
@@ -84,5 +90,5 @@ myLocation.addEventListener('click', (e) => {
 
   navigator.geolocation.getCurrentPosition(success, error, options);
 
-
-})
+}
+getForecast();
