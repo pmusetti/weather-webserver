@@ -15,7 +15,7 @@ const sunriseField = document.querySelector('#sunriseField')
 const sunsetField = document.querySelector('#sunsetField')
 const img = document.querySelector('#icon')
 const myLocation = document.querySelector('#myLocation')
-const accuracyField = document.querySelector('#accuracyField')
+//const accuracyField = document.querySelector('#accuracyField')
 
 
 //Se utilizara en heroku por tanto se elimina la primer parte de la url http://192.168.1.47:3000
@@ -75,7 +75,7 @@ forecast = () => {
     var crd = pos.coords;
 
     //alert('Your location will be calculated with a precision of ' + crd.accuracy + '  meters')
-    accuracyField.textContent = 'Accuracy: ' + crd.accuracy + ' meters.'
+    //accuracyField.textContent = 'Accuracy: ' + crd.accuracy + ' meters.'
     const location = crd.latitude + ' ' + crd.longitude
     getForecast(location)
 

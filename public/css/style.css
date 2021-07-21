@@ -65,3 +65,9 @@ button{
   padding: 8px;
 
 }
+
+tr {
+  max-width: 600px;
+  background-color: #8888885e;
+  border-radius: 50px;
+}
