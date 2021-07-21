@@ -60,11 +60,11 @@ weatherForm.addEventListener('submit', (e) => {
 myLocation.addEventListener('click', (e) => {
   e.preventDefault()
 
-  getForecast();
+  forecast();
 
 })
 
-function getForecast() {
+function forecast() {
   var options = {
     enableHighAccuracy: true,
     timeout: 5000,
@@ -91,4 +91,4 @@ function getForecast() {
   navigator.geolocation.getCurrentPosition(success, error, options);
 
 }
-getForecast();
+forecast();
