@@ -64,7 +64,7 @@ myLocation.addEventListener('click', (e) => {
 
 })
 
-function forecast() {
+forecast = () => {
   var options = {
     enableHighAccuracy: true,
     timeout: 5000,
