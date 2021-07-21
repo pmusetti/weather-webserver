@@ -35,7 +35,7 @@ function getForecast(location) {
         maxTempField.textContent = 'Temp max: ' + res.data.temp_max
         pressField.textContent = 'Pressure: ' + res.data.pressure
         humField.textContent = 'Humidity: ' + res.data.humidity
-        humField.textContent = 'Wind speed: ' + res.data.wind_speed
+        windSpeedField.textContent = 'Wind speed: ' + res.data.wind_speed
         cloudsField.textContent = 'Clouds: ' + res.data.clouds
         sunriseField.textContent = 'Sunrise: ' + res.data.sunrise
         sunsetField = 'Sunset: ' + res.data.sunset
