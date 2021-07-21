@@ -40,7 +40,7 @@ function getForecast(location) {
         sunriseField.textContent = 'Sunrise: ' + res.data.sunrise
         sunsetField = 'Sunset: ' + res.data.sunset
         img.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
-        // img.src = 'https://camo.githubusercontent.com/f422ba9e472321d1107866a3320d77932f393646e40a73ecc8646a1b8a31aeb4/68747470733a2f2f626d63646e2e6e6c2f6173736574732f776561746865722d69636f6e732f76322e302f66696c6c2f636c6561722d6461792e737667'
+        img.src = 'https://camo.githubusercontent.com/f422ba9e472321d1107866a3320d77932f393646e40a73ecc8646a1b8a31aeb4/68747470733a2f2f626d63646e2e6e6c2f6173736574732f776561746865722d69636f6e732f76322e302f66696c6c2f636c6561722d6461792e737667'
 
       }
     })
