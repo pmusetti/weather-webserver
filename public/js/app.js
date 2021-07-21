@@ -1,4 +1,3 @@
-const { get } = require("request")
 
 const weatherForm = document.querySelector('form')//Apunta al formulario
 const search = document.querySelector('input')    //Apunta al input text
