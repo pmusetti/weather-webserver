@@ -50,13 +50,13 @@ function getForecast(location) {
 
 
 
-weatherForm.addEventListener('submit', (e) => {
-  e.preventDefault()//Evita el comportamiento por defecto que es recargar la pagina.
-  const location = search.value
-  getForecast(location)
-})
+// weatherForm.addEventListener('submit', (e) => {
+//   e.preventDefault()//Evita el comportamiento por defecto que es recargar la pagina.
+//   const location = search.value
+//   getForecast(location)
+// })
 
-myLocation.addEventListener('click', (e) => {
+resumeField.addEventListener('click', (e) => {
   e.preventDefault()
 
   forecast();
