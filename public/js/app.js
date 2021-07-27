@@ -1,6 +1,6 @@
 
-const weatherForm = document.querySelector('form')//Apunta al formulario
-const search = document.querySelector('input')    //Apunta al input text
+//const weatherForm = document.querySelector('form')//Apunta al formulario
+//const search = document.querySelector('input')    //Apunta al input text
 const locationField = document.querySelector('#locationField')//querySelector('#msg-one')
 const resumeField = document.querySelector('#resumeField')
 const tempField = document.querySelector('#tempField')
@@ -20,7 +20,6 @@ const myLocation = document.querySelector('#myLocation')
 
 //Se utilizara en heroku por tanto se elimina la primer parte de la url http://192.168.1.47:3000
 function getForecast(location) {
-  console.log(location)
   fetch('/weather/city?address=' + location).then((response) => {
     response.json().then((res) => {
       if (res.error) {
