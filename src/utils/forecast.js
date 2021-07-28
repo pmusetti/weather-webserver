@@ -44,15 +44,15 @@ const forecast = (latitud, longitud , callback)=>{
         resume: response.body.weather[0].description,
         icon: response.body.weather[0].icon,
         temp: response.body.main.temp + '°',
-        feels_like: response.body.main.feels_like + '°',
-        temp_min: response.body.main.temp_min + '°',
-        temp_max: response.body.main.temp_max + '°',
-        pressure: response.body.main.pressure + 'hPa',
-        humidity: response.body.main.humidity + '%',
-        wind_speed: (response.body.wind.speed * 3.6).toFixed(2) + 'm/s',
-        clouds: response.body.clouds.all + '%',
-        sunrise: amanecer ,
-        sunset:  atardecer
+        // feels_like: response.body.main.feels_like + '°',
+        // temp_min: response.body.main.temp_min + '°',
+        // temp_max: response.body.main.temp_max + '°',
+        // pressure: response.body.main.pressure + 'hPa',
+        // humidity: response.body.main.humidity + '%',
+        // wind_speed: (response.body.wind.speed * 3.6).toFixed(2) + 'm/s',
+        // clouds: response.body.clouds.all + '%',
+        // sunrise: amanecer ,
+        // sunset:  atardecer
         
       }
        callback(undefined, data)
