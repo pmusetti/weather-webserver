@@ -80,3 +80,12 @@ border-radius: 10px;
 background-color: #ffffff2a;
 width: 100%;
 }
+
+.card0{
+  align-items: center;
+  margin-top: 16px;
+  padding: 16px;
+border-radius: 10px;
+background-color: #ffffff15;
+width: 100%;
+}
