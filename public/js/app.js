@@ -4,7 +4,7 @@
 const locationField = document.querySelector('#locationField')//querySelector('#msg-one')
 const resumeField = document.querySelector('#resumeField')
 const tempField = document.querySelector('#tempField')
-// const feelsLikeField = document.querySelector('#feelsLikeField')
+const feelsLikeField = document.querySelector('#feelsLikeField')
 // const minTempField = document.querySelector('#minTempField')
 // const maxTempField = document.querySelector('#maxTempField')
 // const pressField = document.querySelector('#pressField')
@@ -30,7 +30,7 @@ function getForecast(location) {
         locationField.textContent = res.data.location
         resumeField.textContent = res.data.resume.toUpperCase()
         tempField.textContent = res.data.temp + "C"
-        // feelsLikeField.textContent = 'Feels like: ' + res.data.feels_like
+        feelsLikeField.textContent = 'Feels like: ' + res.data.feels_like
         // minTempField.textContent = 'Temp min: ' + res.data.temp_min
         // maxTempField.textContent = 'Temp max: ' + res.data.temp_max
         // pressField.textContent = 'Pressure: ' + res.data.pressure

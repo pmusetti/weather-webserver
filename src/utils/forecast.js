@@ -44,7 +44,7 @@ const forecast = (latitud, longitud , callback)=>{
         resume: response.body.weather[0].description,
         icon: response.body.weather[0].icon,
         temp: response.body.main.temp + '°',
-        // feels_like: response.body.main.feels_like + '°',
+        feels_like: response.body.main.feels_like + '°',
         // temp_min: response.body.main.temp_min + '°',
         // temp_max: response.body.main.temp_max + '°',
         // pressure: response.body.main.pressure + 'hPa',
