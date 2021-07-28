@@ -90,3 +90,7 @@ color: #f6f6f6;
 background-color: #ffffff3b;
 width: 100%;
 }
+
+.card{
+  align-items: center;
+}
