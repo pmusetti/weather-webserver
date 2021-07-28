@@ -71,3 +71,9 @@ tr {
   background-color: #88888810;
   border: none;
 }
+
+#card1{
+border-radius: 10px;
+color: #ffffff3f;
+width: 100%;
+}
