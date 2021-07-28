@@ -79,6 +79,7 @@ tr {
 border-radius: 10px;
 background-color: #ffffff2a;
 width: 100%;
+display: inline-flex;
 }
 
 .card0{
