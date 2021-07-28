@@ -18,6 +18,10 @@ body{
 
 }
 
+#tempField{
+  font-size: 70px;
+}
+
 img{
   width: 250px;
 }
@@ -88,7 +92,7 @@ display: inline-flex;
   padding: 16px;
 border-radius: 10px;
 color: #f6f6f6;
-background-color: #00000bb3;
+background-color: #00003ad8;
 width: 100%;
 }
 
