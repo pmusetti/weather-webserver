@@ -15,6 +15,7 @@ const sunriseField = document.querySelector('#sunriseField')
 const sunsetField = document.querySelector('#sunsetField')
 const img = document.querySelector('#icon')
 const myLocation = document.querySelector('#myLocation')
+const boton = document.querySelector('#boton')
 //const accuracyField = document.querySelector('#accuracyField')
 
 
@@ -57,6 +58,12 @@ function getForecast(location) {
 // })
 
 resumeField.addEventListener('click', (e) => {
+  e.preventDefault()
+
+  forecast();
+
+})
+boton.addEventListener('click', (e)=> {
   e.preventDefault()
 
   forecast();
