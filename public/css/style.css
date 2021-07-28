@@ -74,6 +74,7 @@ tr {
 }
 
 .card1{
+  padding: 8px;
 border-radius: 10px;
 background-color: #ffffff2a;
 width: 100%;

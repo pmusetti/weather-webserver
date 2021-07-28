@@ -51,8 +51,8 @@ const forecast = (latitud, longitud , callback)=>{
         // humidity: response.body.main.humidity + '%',
         // wind_speed: (response.body.wind.speed * 3.6).toFixed(2) + 'm/s',
         // clouds: response.body.clouds.all + '%',
-        // sunrise: amanecer ,
-        // sunset:  atardecer
+        sunrise: amanecer ,
+        sunset:  atardecer
         
       }
        callback(undefined, data)
