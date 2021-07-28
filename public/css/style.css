@@ -93,5 +93,5 @@ width: 100%;
 }
 
 .card{
-  align-items: center;
+  display: flex;
 }
