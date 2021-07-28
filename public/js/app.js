@@ -95,4 +95,4 @@ forecast = () => {
   navigator.geolocation.getCurrentPosition(success, error, options);
 
 }
-forecast();
+//forecast();
