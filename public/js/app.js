@@ -31,15 +31,15 @@ function getForecast(location) {
         locationField.textContent = res.data.location
         resumeField.textContent = res.data.resume.toUpperCase()
         tempField.textContent = res.data.temp + "C"
-        feelsLikeField.textContent = 'Feels like: ' + res.data.feels_like
-        minTempField.textContent = 'Temp min: ' + res.data.temp_min
-        maxTempField.textContent = 'Temp max: ' + res.data.temp_max
-        pressField.textContent = 'Pressure: ' + res.data.pressure
-        humField.textContent = 'Humidity: ' + res.data.humidity
-        windSpeedField.textContent = 'Wind speed: ' + res.data.wind_speed
-        cloudsField.textContent = 'Clouds: ' + res.data.clouds
-        sunriseField.textContent = 'Sunrise: ' + res.data.sunrise
-        sunsetField.textContent = 'Sunset: ' + res.data.sunset
+        // feelsLikeField.textContent = 'Feels like: ' + res.data.feels_like
+        // minTempField.textContent = 'Temp min: ' + res.data.temp_min
+        // maxTempField.textContent = 'Temp max: ' + res.data.temp_max
+        // pressField.textContent = 'Pressure: ' + res.data.pressure
+        // humField.textContent = 'Humidity: ' + res.data.humidity
+        // windSpeedField.textContent = 'Wind speed: ' + res.data.wind_speed
+        // cloudsField.textContent = 'Clouds: ' + res.data.clouds
+        // sunriseField.textContent = 'Sunrise: ' + res.data.sunrise
+        // sunsetField.textContent = 'Sunset: ' + res.data.sunset
         img.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
         console.log(res.data.icon)
         //img.src = 'https://camo.githubusercontent.com/f422ba9e472321d1107866a3320d77932f393646e40a73ecc8646a1b8a31aeb4/68747470733a2f2f626d63646e2e6e6c2f6173736574732f776561746865722d69636f6e732f76322e302f66696c6c2f636c6561722d6461792e737667'
