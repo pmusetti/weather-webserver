@@ -1,6 +1,6 @@
 body{
   color: #c9c9c9;
-  background: linear-gradient(360deg, rgb(98, 133, 209) 0%, rgb(8, 102, 224) 35%, rgb(0, 65, 90) 100%);
+  background: linear-gradient(360deg, rgb(0, 7, 21) 0%, rgb(36, 62, 96) 35%, rgb(13, 28, 34) 100%);
   font-family: Arial, Helvetica, sans-serif;
   max-width: 650px;
   margin: 0 auto;
@@ -81,7 +81,7 @@ tr {
   margin-top: 16px;
   padding: 16px;
 border-radius: 10px;
-background-color: #111fa4;
+background-color: #c5c5cc45;
 width: 100%;
 display: inline-flex;
 }
@@ -92,7 +92,7 @@ display: inline-flex;
   padding: 16px;
 border-radius: 10px;
 color: #f6f6f6;
-background-color: #00003ad8;
+background-color: #4c6c8e47;
 width: 100%;
 }
 
