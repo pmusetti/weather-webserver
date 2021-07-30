@@ -94,10 +94,9 @@ forecast();
 
 
 var acc = document.getElementsByClassName("accordion");
-var i;
 
 
-  acc.addEventListener("click", function() {
+  acc.addEventListener("click", (e) => {
     this.classList.toggle("active");
     var panel = this.nextElementSibling;
     if (panel.style.display === "block") {
@@ -105,4 +104,5 @@ var i;
     } else {
       panel.style.display = "block";
     }
-  });
+  })
+  
