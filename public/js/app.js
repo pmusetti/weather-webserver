@@ -95,7 +95,7 @@ forecast();
 
 
 
-
+alert(acc)
 
   acc.addEventListener("click", (e) => {
     this.classList.toggle("active");
