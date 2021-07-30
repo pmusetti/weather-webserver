@@ -95,7 +95,7 @@ forecast();
 
 
 
-alert(acc, img)
+alert(acc + " " + img)
 
   acc.addEventListener("click", (e) => {
     this.classList.toggle("active");
