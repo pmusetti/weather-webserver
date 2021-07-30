@@ -1,6 +1,6 @@
 
-//const weatherForm = document.querySelector('form')//Apunta al formulario
-//const search = document.querySelector('input')    //Apunta al input text
+const weatherForm = document.querySelector('form')//Apunta al formulario
+const search = document.querySelector('input')    //Apunta al input text
 const locationField = document.querySelector('#locationField')//querySelector('#msg-one')
 const resumeField = document.querySelector('#resumeField')
 const tempField = document.querySelector('#tempField')
@@ -50,11 +50,11 @@ function getForecast(location) {
 
 
 
-// weatherForm.addEventListener('submit', (e) => {
-//   e.preventDefault()//Evita el comportamiento por defecto que es recargar la pagina.
-//   const location = search.value
-//   getForecast(location)
-// })
+weatherForm.addEventListener('submit', (e) => {
+  e.preventDefault()//Evita el comportamiento por defecto que es recargar la pagina.
+  const location = search.value
+  getForecast(location)
+})
 
 resumeField.addEventListener('click', (e) => {
   e.preventDefault()
