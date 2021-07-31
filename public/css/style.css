@@ -43,11 +43,11 @@ footer {
 header {
   margin-top: 16px;
   margin-bottom: 28px;
-  border: solid violet;
   padding: 8px;
 }
 
 header button {
+  font-size: 30px;
   cursor: pointer;
   border: solid 1px #888888;
   background-color: #88888800;
@@ -66,7 +66,6 @@ header .panel {
 
 header h1 {
   font-size: 30px;
-  border: solid red;
   max-width: 50%;
   float: left;
   }
