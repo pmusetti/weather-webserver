@@ -13,8 +13,8 @@
         "type": "image/png"
       },
       {
-        "src": "./img/icons/launcher-icon.jpeg",
-        "sizes": "192x192",
+        "src": "./img/icons/bg.png",
+        "sizes": "1153x650",
         "type": "image/png"
       }
     ],
