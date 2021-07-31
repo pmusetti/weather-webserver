@@ -92,16 +92,11 @@ forecast = () => {
 forecast();
 
 
-
-
-
-alert(acc + " " + img)
-
   acc.addEventListener("click", (e) => {
     //this.classList.toggle("active");
     var panel = document.querySelector(".panel");
     if (panel.style.display === "block") {
-      panel.style.display = "none";
+      panel.style.display = "hidden";
     } else {
       panel.style.display = "block";
     }
