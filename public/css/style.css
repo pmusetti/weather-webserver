@@ -40,10 +40,11 @@ header{
   margin-top: 16px;
   margin-bottom: 28px;
   border: solid violet;
+  display: flex;
 
 }
 
-header div>button{
+header button{
   float: right;
 }
 header .panel{
