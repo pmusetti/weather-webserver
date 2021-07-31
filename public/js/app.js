@@ -17,6 +17,7 @@ const img = document.querySelector('#icon')
 //const myLocation = document.querySelector('#myLocation')
 //const accuracyField = document.querySelector('#accuracyField')
 const acc = document.querySelector(".accordion");
+const myLocBnt = document.querySelector("#myLoc")
 
 
 //Se utilizara en heroku por tanto se elimina la primer parte de la url http://192.168.1.47:3000
@@ -62,11 +63,10 @@ weatherForm.addEventListener('submit', (e) => {
   acc.style.display = "block"
 })
 
-resumeField.addEventListener('click', (e) => {
+
+myLocBnt.addEventListener('click', (e) => {
   e.preventDefault()
-
-  forecast();
-
+  forecast()
 })
 
 
