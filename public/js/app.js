@@ -54,8 +54,8 @@ function getForecast(location) {
 weatherForm.addEventListener('submit', (e) => {
   e.preventDefault()//Evita el comportamiento por defecto que es recargar la pagina.
   const location = search.value
-  var acc = document.querySelector("accordion")
   var panel = document.querySelector(".panel");
+  var acc = document.querySelector(".accordion");
 
   getForecast(location)
   panel.style.display = "none"
@@ -98,10 +98,10 @@ forecast();
 
 
 acc.addEventListener("click", (e) => {
-  
+  var acc = document.querySelector(".accordion");
   var panel = document.querySelector(".panel");
   panel.style.display = "block"
-  this.style.display = "none"
+  acc.style.display = "none"
   // if (panel.style.display === "block") {
   //   panel.style.display = "none";
   // } else {
