@@ -66,7 +66,7 @@ weatherForm.addEventListener('submit', (e) => {
 
 myLocBnt.addEventListener('click', (e) => {
   e.preventDefault()
-  forecast()
+  myLocationForecast()
   var panel = document.querySelector(".panel");
   var acc = document.querySelector(".accordion");
   panel.style.display = "none"
@@ -74,7 +74,7 @@ myLocBnt.addEventListener('click', (e) => {
 })
 
 
-forecast = () => {
+myLocationForecast = () => {
   var options = {
     enableHighAccuracy: true,
     timeout: 5000,
@@ -98,7 +98,7 @@ forecast = () => {
   navigator.geolocation.getCurrentPosition(success, error, options);
 
 }
-forecast();
+myLocationForecast();
 
 
 acc.addEventListener("click", (e) => {
@@ -106,10 +106,5 @@ acc.addEventListener("click", (e) => {
   var panel = document.querySelector(".panel");
   panel.style.display = "block"
   acc.style.display = "none"
-  // if (panel.style.display === "block") {
-  //   panel.style.display = "none";
-  // } else {
-  //   panel.style.display = "block";
-  // }
 })
 
