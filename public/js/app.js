@@ -67,6 +67,7 @@ weatherForm.addEventListener('submit', (e) => {
 myLocBnt.addEventListener('click', (e) => {
   e.preventDefault()
   forecast()
+  var panel = document.querySelector(".panel");
   panel.style.display = "none"
 })
 
