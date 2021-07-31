@@ -1,0 +1,15 @@
+{
+    "short_name": "SIGNA Weather App",
+    "name": "Weather Application",
+    "icons": [
+      {
+        "src": "launcher-icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/index.hbs",
+    "display": "standalone",
+    "orientation": "portrait"
+  }
+  
