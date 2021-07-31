@@ -51,6 +51,7 @@ header .panel{
 }
 header div h1{
   border: solid red;
+  max-width: 50%;
 }
 
 h1{
