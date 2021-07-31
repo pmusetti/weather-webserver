@@ -128,7 +128,7 @@ tr {
 
 .active,
 .accordion:hover {
-  background-color: rgba(226, 226, 226, 0.24);
+  color: rgba(245, 245, 245, 0.979);
 }
 
 .panel {
