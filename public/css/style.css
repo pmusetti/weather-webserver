@@ -44,6 +44,7 @@ header {
   margin-top: 16px;
   margin-bottom: 28px;
   border: solid violet;
+  padding: 8px;
 }
 
 header button {
@@ -58,14 +59,13 @@ header .panel {
   float: right;
 }
 header h1 {
-  font-size: 20px;
+  font-size: 30px;
   border: solid red;
   max-width: 50%;
   float: left;
   padding: 16px;
 }
 header img {
-  padding: 16px;
   width: 50px;
   float: inline-start;
 }
