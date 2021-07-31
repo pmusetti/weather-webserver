@@ -51,19 +51,21 @@ header button {
   border: solid 1px #888888;
   background-color: #88888883;
   color: rgb(255, 255, 255);
-  padding: 8px;
+  padding: 16px;
   float: right;
 }
 header .panel {
   float: right;
 }
 header h1 {
+  font-size: 20px;
   border: solid red;
   max-width: 50%;
   float: left;
   padding: 16px;
 }
 header img {
+  padding: 16px;
   width: 50px;
   float: inline-start;
 }
