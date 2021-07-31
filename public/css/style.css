@@ -49,7 +49,7 @@ header button{
 header .panel{
   float: right;
 }
-h1{
+header h1{
   border: solid red;
   max-width: 50%;
   float: left;
