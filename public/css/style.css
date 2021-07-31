@@ -49,18 +49,17 @@ header button{
 header .panel{
   float: right;
 }
-header h1 img{
+h1{
   border: solid red;
   max-width: 50%;
   float: left;
   padding: 16px;
 }
-
-h1{
-  font-size: 30px;
-  margin: 16px;
-  color: #dd0b0b
+img{
+  width: 50px;
+  float: inline-start;
 }
+
 
 header a{
   color: #a1a1a1;
