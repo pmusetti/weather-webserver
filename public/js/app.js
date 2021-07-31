@@ -54,6 +54,10 @@ function getForecast(location) {
 weatherForm.addEventListener('submit', (e) => {
   e.preventDefault()//Evita el comportamiento por defecto que es recargar la pagina.
   const location = search.value
+  var acc = document.querySelector("accordion")
+    var panel = document.querySelector(".panel");
+    panel.style.display = "none"
+    acc.style.display = "block"
   getForecast(location)
 })
 
@@ -93,12 +97,14 @@ forecast();
 
 
   acc.addEventListener("click", (e) => {
-    //this.classList.toggle("active");
+    var acc = document.querySelector("accordion")
     var panel = document.querySelector(".panel");
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
+    panel.style.display = "block"
+    acc.style.display = "none"
+    // if (panel.style.display === "block") {
+    //   panel.style.display = "none";
+    // } else {
+    //   panel.style.display = "block";
+    // }
   })
 

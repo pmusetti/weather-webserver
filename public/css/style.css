@@ -86,7 +86,7 @@ h1{
 
 input {
   border: ipx solid #cccccc;
-  padding: 8px;
+  padding: 10px;
 }
 
 tr {
@@ -120,7 +120,7 @@ tr {
 
 .accordion {
   background-color: rgba(238, 238, 238, 0);
-  color: #444;
+  color: rgb(206, 206, 206);
   cursor: pointer;
   outline: none;
   transition: 0.4s;
