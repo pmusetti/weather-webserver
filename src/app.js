@@ -49,23 +49,16 @@ app.get('/weather/city', (req, res) => {
 
 //Respuesta a /weather/coord
 app.get('/weather/coord', (req, res) => {
-  if (!req.query.address) {
+  if (!req.query.lat) {
     return res.send({
-      error: 'You must provide a address!'
+      error: 'You must provide latitud & longitud!'
     })
   }
-  var city = req.query.address
-  geocode(city, (error, data) => {
-    if (error) {
-      res.send({ error })
-    } else {
-      forecast(data.latitud, data.longitud, (error, data) => {
-        res.send({
-          error,
-          data
-        })
-      })
-    }
+  forecast(req.query.lat, req.query.lon, (error, data) => {
+    res.send({
+      error,
+      data
+    })
   })
 })
 

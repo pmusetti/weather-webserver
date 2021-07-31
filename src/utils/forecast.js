@@ -29,43 +29,43 @@ const unixTime = require('./timeConvert')
 
 
 
-// const forecast = (latitud, longitud , callback)=>{
+const forecast = (latitud, longitud , callback)=>{
     
-//   const url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitud}&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
-//   request({url: url, json: true}, (error, response)=>{
-//     if(error){
-//       callback('Unable to connect forecast service!', undefined)
+  const url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitud}&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
+  request({url: url, json: true}, (error, response)=>{
+    if(error){
+      callback('Unable to connect forecast service!', undefined)
 
-//     }else if(response.body.error){
-//       callback('Unable to find location. Try another address', undefined)
+    }else if(response.body.error){
+      callback('Unable to find location. Try another address', undefined)
 
-//     }else{
-//       const amanecer = unixTime(response.body.sys.sunrise)
-//       const atardecer = unixTime(response.body.sys.sunset)
-//       const data ={
-//         location: response.body.name + ', ' + response.body.sys.country,
-//         resume: response.body.weather[0].description,
-//         icon: response.body.weather[0].icon,
-//         temp: response.body.main.temp + '°',
-//         feels_like: response.body.main.feels_like + '°',
-//         temp_min: response.body.main.temp_min + '°',
-//         temp_max: response.body.main.temp_max + '°',
-//         pressure: response.body.main.pressure + 'hPa',
-//         humidity: response.body.main.humidity + '%',
-//         wind_speed: (response.body.wind.speed * 3.6).toFixed(2) + 'm/s',
-//         // clouds: response.body.clouds.all + '%',
-//         sunrise: amanecer ,
-//         sunset:  atardecer
+    }else{
+      const amanecer = unixTime(response.body.sys.sunrise)
+      const atardecer = unixTime(response.body.sys.sunset)
+      const data ={
+        location: response.body.name + ', ' + response.body.sys.country,
+        resume: response.body.weather[0].description,
+        icon: response.body.weather[0].icon,
+        temp: response.body.main.temp + '°',
+        feels_like: response.body.main.feels_like + '°',
+        temp_min: response.body.main.temp_min + '°',
+        temp_max: response.body.main.temp_max + '°',
+        pressure: response.body.main.pressure + 'hPa',
+        humidity: response.body.main.humidity + '%',
+        wind_speed: (response.body.wind.speed * 3.6).toFixed(2) + 'm/s',
+        // clouds: response.body.clouds.all + '%',
+        sunrise: amanecer ,
+        sunset:  atardecer
         
-//       }
-//        callback(undefined, data)
+      }
+       callback(undefined, data)
 
-//     }
-//   })
+    }
+  })
 
-// }
+}
 
 
 
-// module.exports = forecast
+module.exports = forecast
 
