@@ -96,7 +96,7 @@ forecast();
     //this.classList.toggle("active");
     var panel = document.querySelector(".panel");
     if (panel.style.display === "block") {
-      panel.style.display = "hidden";
+      panel.style.display = "none";
     } else {
       panel.style.display = "block";
     }
