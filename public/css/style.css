@@ -49,6 +49,9 @@ header div>button{
 header .panel{
   float: right;
 }
+header div h1{
+  border: solid red;
+}
 
 h1{
   font-size: 30px;
