@@ -6,6 +6,7 @@ body {
     rgb(5, 35, 75) 35%,
     rgb(13, 28, 34) 100%
   );
+  background-image: url("./images/bg.jpg");
   font-family: Arial, Helvetica, sans-serif;
   max-width: 650px;
   margin: 0 auto;
@@ -66,7 +67,7 @@ header h1 {
   }
 
 header img {
-  width: 50px;
+  width: 38px;
   float: left;
 }
 
