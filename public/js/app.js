@@ -68,7 +68,9 @@ myLocBnt.addEventListener('click', (e) => {
   e.preventDefault()
   forecast()
   var panel = document.querySelector(".panel");
+  var acc = document.querySelector(".accordion");
   panel.style.display = "none"
+  acc.style.display = "block"
 })
 
 
