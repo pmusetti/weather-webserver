@@ -48,26 +48,34 @@ header {
 }
 
 header button {
-  font-size: 30px;
   cursor: pointer;
   border: solid 1px #888888;
   background-color: #88888800;
   color: rgb(209, 209, 209);
   float: right;
 }
+
+header .panel>button{
+  font-size: 30px;
+  float: right;
+}
+
 header .panel {
   float: right;
 }
+
 header h1 {
   font-size: 30px;
   border: solid red;
   max-width: 50%;
   float: left;
   }
+
 header img {
   width: 50px;
   float: left;
 }
+
 
 header a {
   color: #a1a1a1;
@@ -117,24 +125,19 @@ tr {
 }
 
 .accordion {
-  background-color: #eee;
+  background-color: rgba(238, 238, 238, 0);
   color: #444;
   cursor: pointer;
-  padding: 8px;
-  width: 10%;
-  border: none;
   outline: none;
-  font-size: 15px;
   transition: 0.4s;
 }
 
 .active,
 .accordion:hover {
-  background-color: #ccc;
+  background-color: rgb(11, 60, 219);
 }
 
 .panel {
-  padding: 0 18px;
   display: none;
   background-color: rgba(13, 28, 34, 0);
   overflow: hidden;
