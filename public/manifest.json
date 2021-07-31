@@ -3,7 +3,7 @@
     "name": "Weather Application",
     "icons": [
       {
-        "src": "./img/icons/launcher-icon.png",
+        "src": "./img/icons/launcher-icon.webp",
         "sizes": "192x192",
         "type": "image/png"
       }
