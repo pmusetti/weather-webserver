@@ -8,8 +8,8 @@
         "type": "image/png"
       },
       {
-        "src": "./img/icons/bg.png",
-        "sizes": "1153x650",
+        "src": "./img/icons/launcher-icon-2.png",
+        "sizes": "512x512",
         "type": "image/png"
       }
     ],
