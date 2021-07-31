@@ -1,6 +1,11 @@
-body{
+body {
   color: #c9c9c9;
-  background: linear-gradient(360deg, rgb(5, 35, 75) 0%, rgb(5, 35, 75) 35%, rgb(13, 28, 34) 100%);
+  background: linear-gradient(
+    360deg,
+    rgb(5, 35, 75) 0%,
+    rgb(5, 35, 75) 35%,
+    rgb(13, 28, 34) 100%
+  );
   font-family: Arial, Helvetica, sans-serif;
   max-width: 650px;
   margin: 0 auto;
@@ -12,76 +17,73 @@ body{
   min-width: 400px;
 }
 
-.main-content{
+.main-content {
   flex-grow: 1;
   width: 100%;
-
 }
 
-#tempField{
+#tempField {
   font-size: 60px;
 }
 
-img{
+img {
   width: 250px;
 }
-.icons{
+.icons {
   width: 20px;
   position: relative;
 }
-footer{
+footer {
   color: #b8b8b8;
   border-top: 1px solid #eeeeee;
-  margin-top:  16px;
+  margin-top: 16px;
   padding-top: 16px;
 }
 
-header{
+header {
   margin-top: 16px;
   margin-bottom: 28px;
   border: solid violet;
-  
 }
 
-header button{
+header button {
+  cursor: pointer;
+  border: solid 1px #888888;
+  background-color: #88888883;
+  color: rgb(255, 255, 255);
+  padding: 8px;
   float: right;
 }
-header .panel{
+header .panel {
   float: right;
 }
-header h1{
+header h1 {
   border: solid red;
   max-width: 50%;
   float: left;
   padding: 16px;
 }
-img{
+header img {
   width: 50px;
   float: inline-start;
 }
 
-
-header a{
+header a {
   color: #a1a1a1;
   margin-right: 16px;
   text-decoration: none;
 }
 
-.portrait{
+h1{
+  font-size: 35px;
+}
+.portrait {
   width: 300px;
 }
 
-input{
+input {
   border: ipx solid #cccccc;
   padding: 8px;
-}
-button{
-  cursor: pointer;
-  border: solid 1px #888888;
-  background-color:#88888883;
-  color: rgb(255, 255, 255);
-  padding: 8px;
-
 }
 
 tr {
@@ -90,29 +92,28 @@ tr {
   border: none;
 }
 
-.card1{
+.card1 {
   margin-top: 16px;
   padding: 16px;
-border-radius: 10px;
-background-color: #c5c5cc45;
-width: 100%;
-display: inline-flex;
+  border-radius: 10px;
+  background-color: #c5c5cc45;
+  width: 100%;
+  display: inline-flex;
 }
 
-.card0{
+.card0 {
   align-items: center;
   margin-top: 16px;
   padding: 16px;
-border-radius: 10px;
-color: #f6f6f6;
-background-color: #4c6c8e47;
-width: 100%;
+  border-radius: 10px;
+  color: #f6f6f6;
+  background-color: #4c6c8e47;
+  width: 100%;
 }
 
-.card{
+.card {
   margin: auto;
 }
-
 
 .accordion {
   background-color: #eee;
@@ -126,8 +127,9 @@ width: 100%;
   transition: 0.4s;
 }
 
-.active, .accordion:hover {
-  background-color: #ccc; 
+.active,
+.accordion:hover {
+  background-color: #ccc;
 }
 
 .panel {
