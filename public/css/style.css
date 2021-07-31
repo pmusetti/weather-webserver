@@ -49,7 +49,7 @@ header div>button{
 header .panel{
   float: right;
 }
-header div h1{
+header div h1 img{
   border: solid red;
   max-width: 50%;
   float: left;
