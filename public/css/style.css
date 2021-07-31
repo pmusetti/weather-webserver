@@ -55,18 +55,13 @@ header button {
   float: right;
 }
 
-header .panel>button{
-  font-size: 30px;
-  float: right;
-}
-
 header .panel {
   float: right;
 }
 
 header h1 {
   font-size: 30px;
-  max-width: 50%;
+  max-width: 80%;
   float: left;
   }
 
@@ -133,7 +128,7 @@ tr {
 
 .active,
 .accordion:hover {
-  background-color: rgb(11, 60, 219);
+  background-color: rgba(226, 226, 226, 0.24);
 }
 
 .panel {
