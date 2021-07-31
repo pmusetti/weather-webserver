@@ -8,11 +8,6 @@
         "type": "image/png"
       },
       {
-        "src": "./img/icons/launcher-icon.webp",
-        "sizes": "512x512",
-        "type": "image/png"
-      },
-      {
         "src": "./img/icons/bg.png",
         "sizes": "1153x650",
         "type": "image/png"
