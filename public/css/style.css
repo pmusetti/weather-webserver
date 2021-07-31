@@ -130,6 +130,10 @@ tr {
 .accordion:hover {
   color: rgba(245, 245, 245, 0.979);
 }
+.active,
+#myLoc:hover {
+  color: rgba(245, 245, 245, 0.979);
+}
 
 .panel {
   display: none;
