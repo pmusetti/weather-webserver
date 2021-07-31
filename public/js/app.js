@@ -98,10 +98,10 @@ forecast();
 
 
 acc.addEventListener("click", (e) => {
-  var acc = document.querySelector("accordion")
+  var ac = document.querySelector("accordion")
   var panel = document.querySelector(".panel");
   panel.style.display = "block"
-  acc.style.display = "none"
+  ac.style.display = "none"
   // if (panel.style.display === "block") {
   //   panel.style.display = "none";
   // } else {
