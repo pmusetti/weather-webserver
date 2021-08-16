@@ -1,23 +1,23 @@
-{
-    "short_name": "SIGNA Weather App",
-    "name": "Weather Application",
-    "icons": [
-      {
-        "src": "./img/icons/launcher-icon.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "./img/icons/launcher-icon.png",
-        "sizes": "512x512",
-        "type": "image/png"
+// {
+//     "short_name": "SIGNA Weather App",
+//     "name": "Weather Application",
+//     "icons": [
+//       {
+//         "src": "./img/icons/launcher-icon.png",
+//         "sizes": "192x192",
+//         "type": "image/png"
+//       },
+//       {
+//         "src": "./img/icons/launcher-icon.png",
+//         "sizes": "512x512",
+//         "type": "image/png"
         
-      }
+//       }
       
-    ],
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#0f7cf7",
-    "orientation": "portrait"
-  }
+//     ],
+//     "start_url": "/",
+//     "display": "standalone",
+//     "background_color": "#0f7cf7",
+//     "orientation": "portrait"
+//   }
   
