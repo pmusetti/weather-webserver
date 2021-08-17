@@ -97,6 +97,7 @@ myLocationForecast = () => {
     //alert('Your location will be calculated with a precision of ' + crd.accuracy + '  meters')
     //accuracyField.textContent = 'Accuracy: ' + crd.accuracy + ' meters.'
     const location = crd.latitude + ' ' + crd.longitude
+    alert(location)
     getForecast(location)
 
   };
