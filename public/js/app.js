@@ -13,7 +13,12 @@ const windSpeedField = document.querySelector('#windSpeedField')
 // const cloudsField = document.querySelector('#cloudsField')
 const sunriseField = document.querySelector('#sunriseField')
 const sunsetField = document.querySelector('#sunsetField')
-const img = document.querySelector('#icon')
+const mainIcon = document.querySelector('#main-icon')
+const dayOneIcon = document.querySelector('icon-day1')
+const dayTwoIcon = document.querySelector('icon-day2')
+const dayThreeIcon = document.querySelector('icon-day3')
+const dayfourIcon = document.querySelector('icon-day4')
+const dayFiveIcon = document.querySelector('icon-day5')
 //const myLocation = document.querySelector('#myLocation')
 //const accuracyField = document.querySelector('#accuracyField')
 const acc = document.querySelector(".accordion");
@@ -41,7 +46,12 @@ function getForecast(location) {
         // cloudsField.textContent = 'Clouds: ' + res.data.clouds
         sunriseField.textContent = 'Salida: ' + res.data.sunrise
         sunsetField.textContent = 'Puesta: ' + res.data.sunset
-        img.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
+        mainIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
+        dayOneIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
+        dayTwoIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
+        dayThreeIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
+        dayfourIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
+        dayFiveIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
         //img.src = 'https://camo.githubusercontent.com/f422ba9e472321d1107866a3320d77932f393646e40a73ecc8646a1b8a31aeb4/68747470733a2f2f626d63646e2e6e6c2f6173736574732f776561746865722d69636f6e732f76322e302f66696c6c2f636c6561722d6461792e737667'
 
       }
