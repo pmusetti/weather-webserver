@@ -21,7 +21,7 @@ const request = require('request')
 //Si recibo un mensaje de respuesta de la pagina, evalúo si es un mensaje de error o es la respuesta que espero
 //Si es un mensaje de error, entonces body.features.length === 0. En este caso devuelvo un texto personalizado
 // en el parametro error de callback:'Unable to find location' y el parametro 'data' como undefined
-// En caso de que no suceda nada de lo anterior, es porque obruve la respuesta que esperaba. 
+// En caso de que no suceda nada de lo anterior, es porque obtuve la respuesta que esperaba. 
 // En tal caso, extraigo los datos de interés y los pongo dentro de un objeto 'data' y lo devuelvo como parametro 'data' del callback y 'error' undefined
 //Los datos devueltos por esta función son tomados como argumento por la función forecast (ver app.js)
 

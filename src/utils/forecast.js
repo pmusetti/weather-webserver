@@ -27,7 +27,9 @@ const unixTime = require('./timeConvert')
 //http://api.openweathermap.org/data/2.5/weather?lat=-34.7846357&lon=-56.1996447&units=metric&appid=c2c053ae4c5303e99b26955bf8136eb7&lang=es
 //Para traer los iconos http://openweathermap.org/img/wn/50d@2x.png
 
-
+//Se utiliza la solicitud oneCall. Ver https://openweathermap.org/api/one-call-api
+//ejemplo oneCall: https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,minutely&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7
+//ejemplo current: http://api.openweathermap.org/data/2.5/weather?lat=33.44&lon=-94.04&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7
 
 const forecast = (latitud, longitud , callback)=>{
     
