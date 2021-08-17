@@ -1,11 +1,6 @@
 body {
   color: #c9c9c9;
-  background: linear-gradient(
-    360deg,
-    rgb(5, 35, 75) 0%,
-    rgb(5, 35, 75) 35%,
-    rgb(13, 28, 34) 100%
-  );
+  background: black;
   font-family: Arial, Helvetica, sans-serif;
   max-width: 650px;
   margin: 0 auto;
@@ -99,7 +94,7 @@ tr {
   margin-top: 16px;
   padding: 16px;
   border-radius: 10px;
-  background-color: #c5c5cc45;
+  background-color: #ffffff0a;
   width: 100%;
   display: inline-flex;
 }
@@ -110,7 +105,7 @@ tr {
   padding: 16px;
   border-radius: 10px;
   color: #f6f6f6;
-  background-color: #4c6c8e47;
+  background-color: #005fc4d1;
   width: 100%;
 }
 
