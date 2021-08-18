@@ -14,7 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  min-width: 400px;
+  min-width: 420px;
 }
 
 .main-content {
