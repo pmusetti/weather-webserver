@@ -50,7 +50,7 @@ function getForecast(location) {
         maxTempField.textContent = 'Maxima: ' + res.data.temp_max + ' ºC'
         pressField.textContent = 'Presion: ' + res.data.pressure + ' hPa'
         humField.textContent = 'Humedad: ' + res.data.humidity + " %"
-        windSpeedField.textContent = 'Velocidad del viento: ' + res.data.wind_speed + " m/s"
+        windSpeedField.textContent = 'Viento: ' + res.data.wind_speed + " m/s"
         sunriseField.textContent = 'Salida: ' + res.data.sunrise
         sunsetField.textContent = 'Puesta: ' + res.data.sunset
         mainIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'

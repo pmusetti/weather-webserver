@@ -53,13 +53,13 @@ const forecast = (data, callback) => {
         location: response.body.name + ', ' + response.body.sys.country,
         resume: response.body.weather[0].description,
         icon: response.body.weather[0].icon,
-        temp: response.body.main.temp.toFixed(1),
-        feels_like: response.body.main.feels_like.toFixed(1),
-        temp_min: response.body.main.temp_min.toFixed(1),
-        temp_max: response.body.main.temp_max.toFixed(1),
+        temp: response.body.main.temp,
+        feels_like: response.body.main.feels_like,
+        temp_min: response.body.main.temp_min,
+        temp_max: response.body.main.temp_max,
         pressure: response.body.main.pressure,
         humidity: response.body.main.humidity,
-        wind_speed: (response.body.wind.speed * 3.6).toFixed(1),
+        wind_speed: (response.body.wind.speed * 3.6).toFixed(2),
         sunrise: amanecer,
         sunset: atardecer
       }
