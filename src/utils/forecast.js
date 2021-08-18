@@ -31,25 +31,25 @@ const unixTime = require('./timeConvert')
 //ejemplo oneCall: https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,minutely&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7
 //ejemplo current: http://api.openweathermap.org/data/2.5/weather?lat=33.44&lon=-94.04&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7
 
-const forecast = (data , callback)=>{
+const forecast = (data, callback) => {
   let url = " "
-  if (!data.latitud){
-  url = `https://api.openweathermap.org/data/2.5/weather?q=${data}&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
-  }else{
+  if (!data.latitud) {
+    url = `https://api.openweathermap.org/data/2.5/weather?q=${data}&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
+  } else {
 
     url = `http://api.openweathermap.org/data/2.5/weather?lat=${data.latitud}&lon=${data.longitud}&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
   }
-  
-  request({url: url, json: true}, (error, response)=>{
-    if(error){
+
+  request({ url: url, json: true }, (error, response) => {
+    if (error) {
       callback('Unable to connect forecast service!', undefined)
-    }else if(response.body.cod == '404'){
+    } else if (response.body.cod == '404') {
       callback(response.body.message, undefined)
-    }else{
+    } else {
       console.log(response.body)
       const amanecer = unixTime(response.body.sys.sunrise)
       const atardecer = unixTime(response.body.sys.sunset)
-      const data ={
+      const data = {
         location: response.body.name + ', ' + response.body.sys.country,
         resume: response.body.weather[0].description,
         icon: response.body.weather[0].icon,
@@ -59,13 +59,11 @@ const forecast = (data , callback)=>{
         temp_max: response.body.main.temp_max.toFixed(1),
         pressure: response.body.main.pressure,
         humidity: response.body.main.humidity,
-        wind_speed: (response.body.wind.speed * 3.6).toFixed(2),
-        sunrise: amanecer ,
-        sunset:  atardecer
-        
+        wind_speed: (response.body.wind.speed * 3.6).toFixed(1),
+        sunrise: amanecer,
+        sunset: atardecer
       }
-       callback(undefined, data)
-
+      callback(undefined, data)
     }
   })
 

@@ -25,12 +25,12 @@ const myLocBnt = document.querySelector("#myLoc")
 //Se utilizara en heroku por tanto se elimina la primer parte de la url http://192.168.1.47:3000
 function getForecast(location) {
   let url = " "
-  if (!location.lat){
+  if (!location.lat) {
     url = '/weather/city?address=' + location
-  }else{
+  } else {
     url = '/weather/coord?lat=' + location.lat + '&' + 'lon=' + location.lon
   }
-  
+
   fetch(url).then((response) => {
     response.json().then((res) => {
       if (res.error) {
@@ -103,7 +103,7 @@ myLocationForecast = () => {
       lat: crd.latitude,
       lon: crd.longitude
     }
-  
+
     getForecast(location)
 
   };
