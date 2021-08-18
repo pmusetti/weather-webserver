@@ -23,7 +23,7 @@ body {
 }
 
 #tempField {
-  font-size: 60px;
+  font-size: 55px;
 }
 
 img {
@@ -102,17 +102,17 @@ tr {
 .card1 {
   margin-top: 16px;
   padding: 16px;
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: #0707078f;
   width: 100%;
   display: inline-flex;
 }
 
-.card0 {
+.main-card {
   align-items: center;
   margin-top: 16px;
   padding: 16px;
-  border-radius: 10px;
+  border-radius: 8px;
   color: #f6f6f6;
   background-color: #3f5ed9;
   width: 100%;
