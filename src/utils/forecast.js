@@ -31,31 +31,35 @@ const unixTime = require('./timeConvert')
 //ejemplo oneCall: https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,minutely&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7
 //ejemplo current: http://api.openweathermap.org/data/2.5/weather?lat=33.44&lon=-94.04&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7
 
-const forecast = (latitud, longitud , callback)=>{
-    
-  const url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitud}&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
+const forecast = (data , callback)=>{
+  let url = " "
+  if (!data.latitud){
+  url = `https://api.openweathermap.org/data/2.5/weather?q=${data}&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
+  }else{
+
+    url = `http://api.openweathermap.org/data/2.5/weather?lat=${data.latitud}&lon=${data.longitud}&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
+  }
+  
   request({url: url, json: true}, (error, response)=>{
     if(error){
       callback('Unable to connect forecast service!', undefined)
-
-    }else if(response.body.error){
-      callback('Unable to find location. Try another address', undefined)
-
+    }else if(response.body.cod == '404'){
+      callback(response.body.message, undefined)
     }else{
+      console.log(response.body)
       const amanecer = unixTime(response.body.sys.sunrise)
       const atardecer = unixTime(response.body.sys.sunset)
       const data ={
         location: response.body.name + ', ' + response.body.sys.country,
         resume: response.body.weather[0].description,
         icon: response.body.weather[0].icon,
-        temp: response.body.main.temp + '°',
-        feels_like: response.body.main.feels_like + '°',
-        temp_min: response.body.main.temp_min + '°',
-        temp_max: response.body.main.temp_max + '°',
-        pressure: response.body.main.pressure + 'hPa',
-        humidity: response.body.main.humidity + '%',
-        wind_speed: (response.body.wind.speed * 3.6).toFixed(2) + 'm/s',
-        // clouds: response.body.clouds.all + '%',
+        temp: response.body.main.temp.toFixed(1),
+        feels_like: response.body.main.feels_like.toFixed(1),
+        temp_min: response.body.main.temp_min.toFixed(1),
+        temp_max: response.body.main.temp_max.toFixed(1),
+        pressure: response.body.main.pressure,
+        humidity: response.body.main.humidity,
+        wind_speed: (response.body.wind.speed * 3.6).toFixed(2),
         sunrise: amanecer ,
         sunset:  atardecer
         
@@ -66,8 +70,6 @@ const forecast = (latitud, longitud , callback)=>{
   })
 
 }
-
-
 
 module.exports = forecast
 

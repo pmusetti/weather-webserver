@@ -44,9 +44,16 @@ const request = require('request')
 
 //     }
 //   })
-// }
+// } 
+
+//************************************************************************/
+//************************************************************************/
+//**************           NO SE UTILIZA           ***********************/
+//************************************************************************/
+//************************************************************************/
 
 const geocode = (address, callback)=>{
+  console.log("se recibe solicitud de buscar coordenadas de " + address)
   const url = 'https://api.geoapify.com/v1/geocode/search?text=' + encodeURIComponent(address) +'&apiKey=cf92bd8c57cc47a78a06128662042303'
   request({url: url, json: true}, (error, response)=>{
     if(error){
@@ -57,10 +64,11 @@ const geocode = (address, callback)=>{
 
     }else{
       const data ={
-        latitud: response.body.features[0].properties.lat,
-        longitud: response.body.features[0].properties.lon,
-        location: response.body.features[0].properties.city + "," + response.body.features[0].properties.state
+        latitud: response.body.features[1].properties.lat,
+        longitud: response.body.features[1].properties.lon,
+        location: response.body.features[1].properties.city + "," + response.body.features[1].properties.country
       }
+      console.log("datos devueltos por geocode: ", data.location)
       callback(undefined, data)
 
     }
