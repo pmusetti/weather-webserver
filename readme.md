@@ -1,8 +1,8 @@
 # Weather WebApp
 
-### El archivo que inicia el servidor se encuentra en ./src/app.js
+### El archivo que inicia el servidor se encuentra en src/app.js
 
-Se utilizan los módulos de express, path, hbs y 2 propios que se encuentran en utils.
+Se utilizan los módulos de express, path y hbs.
 
 ### Configuración de express y handlebars.
 
@@ -23,7 +23,7 @@ app.get('',(req, res)=>{
   })
 })
 ```
-En este caso, cuando el cliente solicita la página inicia, se le devuelve el archivo index.hbs y la matriz 
+En este caso, cuando el cliente solicita la página inicial, se le devuelve el archivo index.hbs y la matriz 
 ```
   {
     title:'Weather App',
@@ -43,7 +43,7 @@ Estos objetos ```{{title}}``` y ```{{name}}```, tomaran el valor establecido en 
 
 Este encabezado y footer son comunes a todas las paginas, de modo que cuando se sirven las demás páginas se pasa un nuevo objeto "clave:valor" con las mismas claves pero diferentes valores, esto resulta en que cambian los textos que se mostraran en el frontend.
 
-**NOTA: En este caso particular, el texto que cambia dinamicamente  es el titulo, pues todas las páginas tienen títulos diferentes. El footer si hizo con handlebars también pero no amerita pues nunca cambia. Se hizo a modo experimental.**
+**NOTA: En este caso particular se hizo con handlebars a modo experimental, pues el header y el footer nunca cambian.**
 
 ```partialPaths```
 Volviendo al archivo app.js, veremos la declaración de partialPaths dentro de ./templates/partials.
@@ -99,6 +99,8 @@ En la página inicial se encuentra una barra de navegación con 3 botones (Weath
 Adicionalmente se configuraron 2 respuesta mas. Una para cuando desde la página help se realice una petición desconocida /help/*. En este caso se devolverá la página de error diciendo que el articulo no se encontró. Y la ultima respuesta es para las peticiones "*" , esto es cualquier cosa que no coincida con las peticiones anteriores. En este caso se devolverá la pagina de error con el mensaje de pagina no encontrada.
 
 Como ya mencionamos todas las páginas tienen una barra de navegación la cual permite navegar entre las distintas páginas, dentro de las cuales solo se muestra información y no se puede interactuar, salvo en la página inicial donde se encuentra un formulario con un campo de entrada y un botón.
+
+**NOTA: Esta pagina fue modificada y solo muestra una vista con los datos del tiempo. Las respuestas a /help /about fueron eliminadas. Tambien fue eliminada la barra de navegación.**
 
 Este formulario permite al usuario ingresar el nombre de una ciudad y obtener los datos del clima para esa ciudad.
 Esto funciona de la siguiente manera:

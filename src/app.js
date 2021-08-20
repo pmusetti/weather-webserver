@@ -35,7 +35,6 @@ app.get('/weather/coord', (req, res) => {
     latitud: req.query.lat,
     longitud: req.query.lon
   }
-  console.log("coordenadas ", coord)
   forecast(coord, (error, data) => {
     res.send({
       error,
@@ -51,7 +50,6 @@ app.get('/weather/city', (req, res) => {
       error: 'You must provide a city name!'
     })
   }
-  console.log("la ciudad requerida es: ", req.query.address)
   const address = req.query.address
   forecast(address, (error, data) => {
     res.send({

@@ -1,4 +1,5 @@
 const request = require('request')
+const dailyForecast7 = require('./dailyForecast')
 const unixTime = require('./timeConvert')
 
 //FORECAST
