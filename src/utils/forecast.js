@@ -41,13 +41,13 @@ const forecast = (data, callback) => {
 
     //url = `http://api.openweathermap.org/data/2.5/weather?lat=${data.latitud}&lon=${data.longitud}&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
     url = `https://https://api.openweathermap.org/data/2.5/onecall?lat=${data.latitud}&lon=${data.longitud}&exclude=hourly,minutely&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
-    console.log(url)
+    
   }
 
   request({ url: url, json: true }, (error, response) => {
     if (error) {
-      console.log(error);
-      callback('Unable to connect forecast service!', undefined)
+      
+      callback('Unable to connect forecast service!'+ url, undefined)
     } else if (response.body.cod == '404') {
       callback(response.body.message, undefined)
     } else {
