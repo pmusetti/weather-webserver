@@ -45,7 +45,8 @@ const forecast = (data, callback) => {
 
   request({ url: url, json: true }, (error, response) => {
     if (error) {
-      callback('Unable to connect forecast service!' + error, undefined)
+      console.log(error);
+      callback('Unable to connect forecast service!', undefined)
     } else if (response.body.cod == '404') {
       callback(response.body.message, undefined)
     } else {
