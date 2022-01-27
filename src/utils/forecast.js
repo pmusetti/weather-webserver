@@ -74,18 +74,18 @@ const forecast = (data, callback) => {
           date: response.body.daily[1].sunset
 
         },
-        dai : [{},{},{},{},{},{},{},{}]
+        daily : [{},{},{},{},{},{},{},{}]
         
       }
 
-      /*for (let i = 0; i < response.body.daily.length -1; i++) {
+      for (let i = 0; i < response.body.daily.length -1; i++) {
         data.daily[i].min_temp = response.body.daily[i].temp.min.toFixed(0);
         data.daily[i].max_temp= response.body.daily[1].temp.max.toFixed(0);
         data.daily[i].resume= response.body.daily[1].weather[0].description;
         data.daily[i].icon= response.body.daily[1].weather[0].icon;
         data.daily[i].date= response.body.daily[1].sunset;
         
-      }*/
+      }
 
       callback(undefined, data)
     }
