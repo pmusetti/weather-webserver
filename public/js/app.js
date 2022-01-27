@@ -48,10 +48,6 @@ const day5_date = document.querySelector("#date-day5");
 
 
 
-
-
-const day2_date = document.querySelector("#date-day2");
-
 //Se utilizara en heroku por tanto se elimina la primer parte de la url http://192.168.1.47:3000
 function getForecast(location) {
   let url = " "
