@@ -22,6 +22,7 @@ const acc = document.querySelector(".accordion");
 const myLocBnt = document.querySelector("#myLoc");
 const day1_temp = document.querySelector("#temp-day1");
 const day1_resume = document.querySelector("#forecast-day1");
+const day1_icon = document.querySelector("#icon-day1");
 
 
 //Se utilizara en heroku por tanto se elimina la primer parte de la url http://192.168.1.47:3000
@@ -64,6 +65,7 @@ function getForecast(location) {
 
         day1_temp.textContent = res.data.day1.min_temp + "/" + res.data.day1.max_temp + "ºC"
         day1_resume.textContent = res.data.day1.resume
+        day1_icon.src = 'http://openweathermap.org/img/wn/' + res.data.day1.icon + '@2x.png'
       }
     })
   })
