@@ -110,7 +110,7 @@ function getForecast(location) {
         day5_temp.textContent = res.data.daily[4].min_temp + "/" + res.data.daily[4].max_temp + "ºC"
         day5_resume.textContent = res.data.daily[4].resume
         day5_icon.src = 'http://openweathermap.org/img/wn/' + res.data.daily[4].icon + '@2x.png'
-        day5_date.textContent = res.data.daily[4].date
+        day5_date.textContent = res.data.daily[4].date.getDate()
 
         
       }
