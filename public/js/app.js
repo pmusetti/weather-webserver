@@ -20,10 +20,36 @@ const dayfourIcon = document.querySelector('#icon-day4')
 const dayFiveIcon = document.querySelector('#icon-day5')
 const acc = document.querySelector(".accordion");
 const myLocBnt = document.querySelector("#myLoc");
+
 const day1_temp = document.querySelector("#temp-day1");
 const day1_resume = document.querySelector("#forecast-day1");
 const day1_icon = document.querySelector("#icon-day1");
 const day1_date = document.querySelector("#date-day1");
+
+const day2_temp = document.querySelector("#temp-day2");
+const day2_resume = document.querySelector("#forecast-day2");
+const day2_icon = document.querySelector("#icon-day2");
+const day2_date = document.querySelector("#date-day2");
+
+const day3_temp = document.querySelector("#temp-day3");
+const day3_resume = document.querySelector("#forecast-day3");
+const day3_icon = document.querySelector("#icon-day3");
+const day3_date = document.querySelector("#date-day3");
+
+const day4_temp = document.querySelector("#temp-day4");
+const day4_resume = document.querySelector("#forecast-day4");
+const day4_icon = document.querySelector("#icon-day4");
+const day4_date = document.querySelector("#date-day4");
+
+const day5_temp = document.querySelector("#temp-day5");
+const day5_resume = document.querySelector("#forecast-day5");
+const day5_icon = document.querySelector("#icon-day5");
+const day5_date = document.querySelector("#date-day5");
+
+
+
+
+
 const day2_date = document.querySelector("#date-day2");
 
 //Se utilizara en heroku por tanto se elimina la primer parte de la url http://192.168.1.47:3000
@@ -65,13 +91,19 @@ function getForecast(location) {
         dayfourIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
         dayFiveIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
 
-        day1_temp.textContent = res.data.dai[0].min_temp + "/" + res.data.day1.max_temp + "ºC"
-        day1_resume.textContent = res.data.day1.resume
-        day1_icon.src = 'http://openweathermap.org/img/wn/' + res.data.day1.icon + '@2x.png'
-        let date = new Date(res.data.day1.date)
+        day1_temp.textContent = res.data.daily[0].min_temp + "/" + res.data.daily[0].max_temp + "ºC"
+        day1_resume.textContent = res.data.daily[0].resume
+        day1_icon.src = 'http://openweathermap.org/img/wn/' + res.data.daily[0].icon + '@2x.png'
+        let date = new Date(res.data.daily[0].date)
         day1_date.textContent = date.getDate() + "/" + (date.getMonth() +1)
 
-        day2_date.textContent = res.data.dai[1].min_temp
+        day2_temp.textContent = res.data.daily[1].min_temp + "/" + res.data.daily[1].max_temp + "ºC"
+        day2_resume.textContent = res.data.daily[1].resume
+        day2_icon.src = 'http://openweathermap.org/img/wn/' + res.data.daily[1].icon + '@2x.png'
+        let date = new Date(res.data.daily[1].date)
+        day2_date.textContent = date.getDate() + "/" + (date.getMonth() +1)
+
+        
       }
     })
   })
