@@ -51,7 +51,6 @@ const forecast = (data, callback) => {
     } else if (response.body.cod == '404') {
       callback(response.body.message, undefined)
     } else {
-      console.log(response.body)
       const amanecer = unixTime(response.body.current.sunrise)
       const atardecer = unixTime(response.body.current.sunset)
       const data = {
@@ -75,7 +74,14 @@ const forecast = (data, callback) => {
           date: response.body.daily[1].sunset
 
         }
+        
       }
+
+      for (let i = 0; i < response.body.daily.length -1; i++) {
+        data.dai[i].min_tem = response.body.daily[i].temp.min.toFixed(0)
+        
+      }
+
       callback(undefined, data)
     }
   })
