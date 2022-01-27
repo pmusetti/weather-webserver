@@ -99,6 +99,12 @@ function getForecast(location) {
         date = new Date(res.data.daily[1].date)
         day2_date.textContent = date.getDate() + "/" + (date.getMonth() +1)
 
+        day3_temp.textContent = res.data.daily[2].min_temp + "/" + res.data.daily[2].max_temp + "ºC"
+        day3_resume.textContent = res.data.daily[2].resume
+        day3_icon.src = 'http://openweathermap.org/img/wn/' + res.data.daily[2].icon + '@2x.png'
+        date = new Date(res.data.daily[2].date)
+        day3_date.textContent = date.getDate() + "/" + (date.getMonth() +1)
+
         
       }
     })
