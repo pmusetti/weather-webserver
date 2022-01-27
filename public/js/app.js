@@ -69,7 +69,7 @@ function getForecast(location) {
         day1_resume.textContent = res.data.day1.resume
         day1_icon.src = 'http://openweathermap.org/img/wn/' + res.data.day1.icon + '@2x.png'
         let date = new Date(res.data.day1.date)
-        day1_date.textContent = date.getDate() + "/" + date.getMonth()
+        day1_date.textContent = date.getDate() + "/" + (date.getMonth() +1)
       }
     })
   })
