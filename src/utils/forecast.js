@@ -71,8 +71,8 @@ const forecast = (data, callback) => {
           min_temp: response.body.daily[1].temp.min.toFixed(1),
           max_temp: response.body.daily[1].temp.max.toFixed(1),
           resume: response.body.daily[1].weather[0].description,
-          icon: resume.body.daily[1].weather[0].icon,
-          //date: resume.body.daily[1].sunset
+          icon: response.body.daily[1].weather[0].icon,
+          date: response.body.daily[1].sunset
 
         }
       }
