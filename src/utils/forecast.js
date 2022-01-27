@@ -72,7 +72,7 @@ const forecast = (data, callback) => {
           max_temp: response.body.daily[1].temp.max.toFixed(1),
           resume: response.body.daily[1].weather[0].description,
           icon: resume.body.daily[1].weather[0].icon,
-          date: resume.boyd.daily[1].sunset
+          date: resume.body.daily[1].sunset
 
         }
       }
