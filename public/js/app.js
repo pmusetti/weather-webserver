@@ -26,7 +26,7 @@ const day1_resume = document.querySelector("#forecast-day1");
 const day1_icon = document.querySelector("#icon-day1");
 const day1_date = document.querySelector("#date-day1");
 
-const day2_temp = document.querySelector("#temp-day2");
+/*const day2_temp = document.querySelector("#temp-day2");
 const day2_resume = document.querySelector("#forecast-day2");
 const day2_icon = document.querySelector("#icon-day2");
 const day2_date = document.querySelector("#date-day2");
@@ -44,7 +44,7 @@ const day4_date = document.querySelector("#date-day4");
 const day5_temp = document.querySelector("#temp-day5");
 const day5_resume = document.querySelector("#forecast-day5");
 const day5_icon = document.querySelector("#icon-day5");
-const day5_date = document.querySelector("#date-day5");
+const day5_date = document.querySelector("#date-day5");*/
 
 
 
@@ -87,10 +87,10 @@ function getForecast(location) {
         dayfourIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
         dayFiveIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
 
-        day1_temp.textContent = res.data.daily[0].min_temp + "/" + res.data.day1.max_temp + "ºC"
-        day1_resume.textContent = res.data.daily[0].resume
+        day1_temp.textContent = res.data.day1.min_temp + "/" + res.data.day1.max_temp + "ºC"
+        day1_resume.textContent = res.data.day1.resume
         day1_icon.src = 'http://openweathermap.org/img/wn/' + res.data.day1.icon + '@2x.png'
-        let date = new Date(res.data.daily[0].date)
+        let date = new Date(res.data.day1.date)
         day1_date.textContent = date.getDate() + "/" + (date.getMonth() +1)
 
         /*day2_temp.textContent = res.data.daily[1].min_temp + "/" + res.data.daily[1].max_temp + "ºC"
