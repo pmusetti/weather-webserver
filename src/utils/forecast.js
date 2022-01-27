@@ -68,9 +68,8 @@ const forecast = (data, callback) => {
         sunrise: amanecer,
         sunset: atardecer,
         day1 : {
-          pressure: response.body.current.pressure,
-          //min_temp: response.body.daily[1].temp.min,
-          //max_temp: response.body.daily[1].temp.max
+          min_temp: response.body.daily[1].temp.min,
+          max_temp: response.body.daily[1].temp.max
         }
       }
       callback(undefined, data)
