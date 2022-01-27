@@ -67,11 +67,11 @@ const forecast = (data, callback) => {
         wind_speed: (response.body.current.wind_speed * 3.6).toFixed(2),
         sunrise: amanecer,
         sunset: atardecer,
-        /*day1 = {
+        day1 : {
           pressure: response.body.current.pressure,
           //min_temp: response.body.daily[1].temp.min,
           //max_temp: response.body.daily[1].temp.max
-        }*/
+        }
       }
       callback(undefined, data)
     }
