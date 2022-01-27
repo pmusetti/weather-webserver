@@ -87,9 +87,9 @@ function getForecast(location) {
         dayfourIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
         dayFiveIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
 
-        day1_temp.textContent = res.data.daily[0].min_temp + "/" + res.data.daily[0].max_temp + "ºC"
+        day1_temp.textContent = res.data.daily[0].min_temp + "/" + res.data.day1.max_temp + "ºC"
         day1_resume.textContent = res.data.daily[0].resume
-        day1_icon.src = 'http://openweathermap.org/img/wn/' + res.data.daily[0].icon + '@2x.png'
+        day1_icon.src = 'http://openweathermap.org/img/wn/' + res.data.day1.icon + '@2x.png'
         let date = new Date(res.data.daily[0].date)
         day1_date.textContent = date.getDate() + "/" + (date.getMonth() +1)
 
