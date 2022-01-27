@@ -95,12 +95,22 @@ function getForecast(location) {
         day2_temp.textContent = res.data.daily[1].min_temp + "/" + res.data.daily[1].max_temp + "ºC"
         day2_resume.textContent = res.data.daily[1].resume
         day2_icon.src = 'http://openweathermap.org/img/wn/' + res.data.daily[1].icon + '@2x.png'
-        day2_date.textContent = res.data.daily[0].date
+        day2_date.textContent = res.data.daily[1].date
 
         day3_temp.textContent = res.data.daily[2].min_temp + "/" + res.data.daily[2].max_temp + "ºC"
         day3_resume.textContent = res.data.daily[2].resume
         day3_icon.src = 'http://openweathermap.org/img/wn/' + res.data.daily[2].icon + '@2x.png'
-        day3_date.textContent = res.data.daily[0].date
+        day3_date.textContent = res.data.daily[2].date
+
+        day4_temp.textContent = res.data.daily[3].min_temp + "/" + res.data.daily[3].max_temp + "ºC"
+        day4_resume.textContent = res.data.daily[3].resume
+        day4_icon.src = 'http://openweathermap.org/img/wn/' + res.data.daily[3].icon + '@2x.png'
+        day4_date.textContent = res.data.daily[3].date
+
+        day5_temp.textContent = res.data.daily[4].min_temp + "/" + res.data.daily[4].max_temp + "ºC"
+        day5_resume.textContent = res.data.daily[4].resume
+        day5_icon.src = 'http://openweathermap.org/img/wn/' + res.data.daily[4].icon + '@2x.png'
+        day5_date.textContent = res.data.daily[4].date
 
         
       }
