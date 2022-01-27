@@ -133,7 +133,7 @@ tr {
 }
 .five-days-card img{
   margin: 0 auto;
-  width: 10px;
+  width: auto ;
 }
 
 .accordion {
