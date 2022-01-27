@@ -73,7 +73,8 @@ const forecast = (data, callback) => {
           icon: response.body.daily[1].weather[0].icon,
           date: response.body.daily[1].sunset
 
-        }
+        },
+        dai : [{},{},{},{},{},{},{},{}]
         
       }
 
