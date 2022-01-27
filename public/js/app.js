@@ -61,7 +61,7 @@ function getForecast(location) {
         dayfourIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
         dayFiveIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
 
-        //day1_temp.textContent = res.data.day1.min_temp + "/" + res.data.day1.max_temp
+        day1_temp.textContent = res.data.day1.min_temp + "/" + res.data.day1.max_temp
       }
     })
   })
