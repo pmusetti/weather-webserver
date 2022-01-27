@@ -66,7 +66,11 @@ const forecast = (data, callback) => {
         humidity: response.body.current.humidity,
         wind_speed: (response.body.current.wind_speed * 3.6).toFixed(2),
         sunrise: amanecer,
-        sunset: atardecer
+        sunset: atardecer,
+        day1 = {
+          min_temp: response.body.daily[1].temp.min,
+          max_temp: response.body.daily[1].temp.max
+        }
       }
       callback(undefined, data)
     }

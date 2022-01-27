@@ -19,7 +19,8 @@ const dayThreeIcon = document.querySelector('#icon-day3')
 const dayfourIcon = document.querySelector('#icon-day4')
 const dayFiveIcon = document.querySelector('#icon-day5')
 const acc = document.querySelector(".accordion");
-const myLocBnt = document.querySelector("#myLoc")
+const myLocBnt = document.querySelector("#myLoc");
+const day1_min_temp = document.querySelector("#temp-day1");
 
 
 //Se utilizara en heroku por tanto se elimina la primer parte de la url http://192.168.1.47:3000
@@ -59,6 +60,8 @@ function getForecast(location) {
         dayThreeIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
         dayfourIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
         dayFiveIcon.src = 'http://openweathermap.org/img/wn/' + res.data.icon + '@2x.png'
+
+        day1_min_temp.textContent = res.data.day1.min_temp
       }
     })
   })
