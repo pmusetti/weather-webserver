@@ -61,7 +61,7 @@ const forecast = (data, callback) => {
         temp: response.body.current.temp,
         feels_like: response.body.current.feels_like,
         temp_min: response.body.daily[0].temp.min,
-        temp_max: response.body.current[0].temp.max,
+        temp_max: response.body.daily[0].temp.max,
         pressure: response.body.current.pressure,
         humidity: response.body.current.humidity,
         wind_speed: (response.body.current.wind_speed * 3.6).toFixed(2),
