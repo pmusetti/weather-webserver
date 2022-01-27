@@ -83,7 +83,7 @@ const forecast = (data, callback) => {
         data.daily[i].max_temp= response.body.daily[i].temp.max.toFixed(0);
         data.daily[i].resume= response.body.daily[i].weather[0].description;
         data.daily[i].icon= response.body.daily[i].weather[0].icon;
-        let date = new Date(response.body.daily[i].sunrise)
+        let date = new Date(response.body.daily[i].dt)
         data.daily[i].date= date.getDate() + "/" + date.getMonth()+1;
         
       }
