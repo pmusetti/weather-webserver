@@ -47,24 +47,24 @@ const forecast = (data, callback) => {
   request({ url: url, json: true }, (error, response) => {
     if (error) {
       
-      callback('Unable to connect forecast service!'+ url, undefined)
+      callback('Unable to connect forecast service!', undefined)
     } else if (response.body.cod == '404') {
       callback(response.body.message, undefined)
     } else {
       console.log(response.body)
-      const amanecer = unixTime(response.body.sys.sunrise)
-      const atardecer = unixTime(response.body.sys.sunset)
+      const amanecer = unixTime(response.body.current.sunrise)
+      const atardecer = unixTime(response.body.current.sunset)
       const data = {
-        location: response.body.name + ', ' + response.body.sys.country,
-        resume: response.body.weather[0].description,
-        icon: response.body.weather[0].icon,
-        temp: response.body.main.temp,
-        feels_like: response.body.main.feels_like,
-        temp_min: response.body.main.temp_min,
-        temp_max: response.body.main.temp_max,
-        pressure: response.body.main.pressure,
-        humidity: response.body.main.humidity,
-        wind_speed: (response.body.wind.speed * 3.6).toFixed(2),
+        location: response.body.timezone + ', ' + response.body.timezone_offset,
+        resume: response.body.current.weather[0].description,
+        icon: response.body.current.weather[0].icon,
+        temp: response.body.current.temp,
+        feels_like: response.body.current.feels_like,
+        temp_min: response.body.current.temp_min,
+        temp_max: response.body.current.temp_max,
+        pressure: response.body.current.pressure,
+        humidity: response.body.current.humidity,
+        wind_speed: (response.body.current.wind_speed * 3.6).toFixed(2),
         sunrise: amanecer,
         sunset: atardecer
       }
