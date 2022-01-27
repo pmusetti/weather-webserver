@@ -24,7 +24,7 @@ const day1_temp = document.querySelector("#temp-day1");
 const day1_resume = document.querySelector("#forecast-day1");
 const day1_icon = document.querySelector("#icon-day1");
 const day1_date = document.querySelector("#date-day1");
-
+const day2_date = document.querySelector("#date-day2");
 
 //Se utilizara en heroku por tanto se elimina la primer parte de la url http://192.168.1.47:3000
 function getForecast(location) {
@@ -70,6 +70,8 @@ function getForecast(location) {
         day1_icon.src = 'http://openweathermap.org/img/wn/' + res.data.day1.icon + '@2x.png'
         let date = new Date(res.data.day1.date)
         day1_date.textContent = date.getDate() + "/" + (date.getMonth() +1)
+
+        day2_date.textContent = res.data.dai[1].min_temp
       }
     })
   })
