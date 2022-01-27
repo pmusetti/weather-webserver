@@ -79,7 +79,7 @@ const forecast = (data, callback) => {
       }
 
       for (let i = 0; i < response.body.daily.length -1; i++) {
-        data.dai[i].min_tem = response.body.daily[i].temp.min.toFixed(0)
+        data.dai[i].min_temp = response.body.daily[i].temp.min.toFixed(0)
         
       }
 
