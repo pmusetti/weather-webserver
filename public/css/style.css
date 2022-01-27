@@ -131,6 +131,9 @@ tr {
   margin: 0 auto;
   font-size: 10px;
 }
+.five-days-card img{
+  margin: 0 auto;
+}
 
 .accordion {
   background-color: rgba(238, 238, 238, 0);
