@@ -96,7 +96,7 @@ function getForecast(location) {
         day2_temp.textContent = res.data.daily[1].min_temp + "/" + res.data.daily[1].max_temp + "ºC"
         day2_resume.textContent = res.data.daily[1].resume
         day2_icon.src = 'http://openweathermap.org/img/wn/' + res.data.daily[1].icon + '@2x.png'
-        let date = new Date(res.data.daily[1].date)
+        date = new Date(res.data.daily[1].date)
         day2_date.textContent = date.getDate() + "/" + (date.getMonth() +1)
 
         
