@@ -89,38 +89,38 @@ const forecast = (data, callback) => {
         data.daily[i].date= date.getDay()
         //day = date.getDay()
 
-        // switch (day) {
-        //   case 0:
-        //     data.daily[i].date = "Lunes"
-        //     break;
+        switch (date.getDay()) {
+          case 0:
+            data.daily[i].date = "Lunes"
+            break;
 
-        //   case 1:
-        //     data.daily[i].date = "Martes"
-        //     break;
+          case 1:
+            data.daily[i].date = "Martes"
+            break;
 
-        //   case 2:
-        //     data.daily[i].date = "Miercoles"
-        //     break;
+          case 2:
+            data.daily[i].date = "Miercoles"
+            break;
 
-        //   case 3:
-        //     data.daily[i].date = "Jueves"
-        //     break;
+          case 3:
+            data.daily[i].date = "Jueves"
+            break;
 
-        //   case 4:
-        //     data.daily[i].date = "Viernes"
-        //     break;
+          case 4:
+            data.daily[i].date = "Viernes"
+            break;
 
-        //   case 5:
-        //     data.daily[i].date = "Sabado"
-        //       break;
+          case 5:
+            data.daily[i].date = "Sabado"
+              break;
 
-        //   case 6:
-        //     data.daily[i].date = "Domingo"
-        //     break;
+          case 6:
+            data.daily[i].date = "Domingo"
+            break;
 
-        //   default:
-        //     break;
-        // }
+          default:
+            break;
+        }
         
       }
 
