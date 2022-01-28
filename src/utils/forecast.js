@@ -86,7 +86,7 @@ const forecast = (data, callback) => {
         data.daily[i].resume= response.body.daily[i].weather[0].description;
         data.daily[i].icon= response.body.daily[i].weather[0].icon;
         date = response.body.daily[i].dt*1000
-        //data.daily[i].date= date.getDay()
+        data.daily[i].date= date
         //day = date.getDay()
 
         // switch (day) {
