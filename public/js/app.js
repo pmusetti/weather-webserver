@@ -92,13 +92,13 @@ function getForecast(location) {
         day1_resume.textContent = res.data.daily[0].resume
         day1_icon.src = 'http://openweathermap.org/img/wn/' + res.data.daily[0].icon + '@2x.png'
         fecha = new Date(res.data.daily[0].date)
-        day1_date.textContent = fecha.getDate() + "/" + fecha.getMonth() + 1
+        day1_date.textContent = "HOY" //fecha.getDate() + "/" + fecha.getMonth() + 1
 
         day2_temp.textContent = res.data.daily[1].min_temp + "/" + res.data.daily[1].max_temp + "ºC"
         day2_resume.textContent = res.data.daily[1].resume
         day2_icon.src = 'http://openweathermap.org/img/wn/' + res.data.daily[1].icon + '@2x.png'
         fecha = new Date(res.data.daily[1].date)
-        day2_date.textContent = fecha.getDate() + "/" + fecha.getMonth() + 1
+        day2_date.textContent = "MAÑANA" //fecha.getDate() + "/" + fecha.getMonth() + 1
 
         day3_temp.textContent = res.data.daily[2].min_temp + "/" + res.data.daily[2].max_temp + "ºC"
         day3_resume.textContent = res.data.daily[2].resume
