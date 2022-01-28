@@ -90,12 +90,12 @@ function getForecast(location) {
         day1_temp.textContent = res.data.daily[0].min_temp + "/" + res.data.daily[0].max_temp + "ºC"
         day1_resume.textContent = res.data.daily[0].resume
         day1_icon.src = 'http://openweathermap.org/img/wn/' + res.data.daily[0].icon + '@2x.png'
-        day1_date.textContent = res.data.daily[0].date//"HOY" 
+        day1_date.textContent = "HOY" 
 
         day2_temp.textContent = res.data.daily[1].min_temp + "/" + res.data.daily[1].max_temp + "ºC"
         day2_resume.textContent = res.data.daily[1].resume
         day2_icon.src = 'http://openweathermap.org/img/wn/' + res.data.daily[1].icon + '@2x.png'
-        day2_date.textContent = res.data.daily[1].date//"MAÑANA" 
+        day2_date.textContent = "MAÑANA" 
 
         day3_temp.textContent = res.data.daily[2].min_temp + "/" + res.data.daily[2].max_temp + "ºC"
         day3_resume.textContent = res.data.daily[2].resume
