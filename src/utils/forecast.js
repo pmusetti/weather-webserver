@@ -35,8 +35,8 @@ const unixTime = require('./timeConvert')
 const forecast = (data, callback) => {
   let url = " "
   if (!data.latitud) {
-    //url = `https://api.openweathermap.org/data/2.5/weather?q=${data}&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
-    url = `https://https://api.openweathermap.org/data/2.5/onecall?q=${data}&exclude=hourly,minutely&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
+    url = `https://api.openweathermap.org/data/2.5/weather?q=${data}&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
+    //url = `https://https://api.openweathermap.org/data/2.5/onecall?q=${data}&exclude=hourly,minutely&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
   } else {
 
     //url = `http://api.openweathermap.org/data/2.5/weather?lat=${data.latitud}&lon=${data.longitud}&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
