@@ -68,7 +68,8 @@ function getForecast(location) {
 
 
       } else {
-        
+        let fecha = new Date()
+
         locationField.textContent = res.data.location
         resumeField.textContent = res.data.resume.toUpperCase()
         tempField.textContent = res.data.temp + " ºC"
@@ -105,13 +106,14 @@ function getForecast(location) {
         day4_temp.textContent = res.data.daily[3].min_temp + "/" + res.data.daily[3].max_temp + "ºC"
         day4_resume.textContent = res.data.daily[3].resume
         day4_icon.src = 'http://openweathermap.org/img/wn/' + res.data.daily[3].icon + '@2x.png'
-        day4_date.textContent = res.data.daily[3].date.getDate() + "/" + res.data.daily[3].date.getMonth()
+        fecha = new Date(res.data.daily[3].date)
+        day4_date.textContent = fecha.getDate() + "/" + fecha.getMonth()
 
         day5_temp.textContent = res.data.daily[4].min_temp + "/" + res.data.daily[4].max_temp + "ºC"
         day5_resume.textContent = res.data.daily[4].resume
         day5_icon.src = 'http://openweathermap.org/img/wn/' + res.data.daily[4].icon + '@2x.png'
         let fecha = new Date(res.data.daily[4].date)
-        day5_date.textContent = fecha.getDate()
+        day5_date.textContent = fecha.getDate() + "/" + fecha.getMonth()
 
         
       }
