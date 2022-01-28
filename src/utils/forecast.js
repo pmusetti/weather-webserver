@@ -79,6 +79,7 @@ const forecast = (data, callback) => {
       }
       
       let date = new Date()
+      let day = ""
       for (let i = 0; i < response.body.daily.length -1; i++) {
         data.daily[i].min_temp = response.body.daily[i].temp.min.toFixed(0);
         data.daily[i].max_temp= response.body.daily[i].temp.max.toFixed(0);
@@ -86,8 +87,9 @@ const forecast = (data, callback) => {
         data.daily[i].icon= response.body.daily[i].weather[0].icon;
         date = response.body.daily[i].dt*1000
         //data.daily[i].date= date.getDate()
+        day = date.getDate()
 
-        switch (date.getDate()) {
+        switch (day) {
           case 0:
             data.daily[i].date = "Lunes"
             break;
