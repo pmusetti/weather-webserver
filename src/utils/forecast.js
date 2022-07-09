@@ -37,11 +37,14 @@ const forecast = (data, callback) => {
   if (!data.latitud) {
     //url = `https://api.openweathermap.org/data/2.5/weather?q=${data}&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
     //url = `https://https://api.openweathermap.org/data/2.5/onecall?lat=${data.latitud}&lon=${data.longitud}&exclude=hourly,minutely&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
+    
+    //Si no hay latitud en data, es porque se ingresó el nombre de una ciudad. En este caso hay que llamar a geocode() para determinar las coordenadas de esta
+    //ciudad y formar la url
   } else {
 
     //url = `http://api.openweathermap.org/data/2.5/weather?lat=${data.latitud}&lon=${data.longitud}&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
     url = `https://api.openweathermap.org/data/2.5/onecall?lat=${data.latitud}&lon=${data.longitud}&exclude=hourly,minutely&units=metric&lang=es&appid=c2c053ae4c5303e99b26955bf8136eb7`
-    
+    //Llamar a geocode() para obtener el nombre de la ciudad correspondiente a las coordenadas dadas.
   }
 
   request({ url: url, json: true }, (error, response) => {
